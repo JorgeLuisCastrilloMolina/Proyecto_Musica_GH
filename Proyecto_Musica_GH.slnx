@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="Proyecto_Musica_GH/Proyecto_Musica_GH.csproj" />
+  <Project Path="Proyecto_Musica_GHBLL/Proyecto_Musica_GHBLL.csproj" />
+  <Project Path="Proyecto_Musica_GHDAL/Proyecto_Musica_GHDAL.csproj" />
 </Solution>
