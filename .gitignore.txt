@@ -1,0 +1,20 @@
+# Ignorar archivos temporales de Visual Studio
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.cache
+*.db
+*.log
+*.idx
+
+# Ignorar paquetes NuGet
+*.nupkg
+packages/
+
+# Ignorar configuraciones locales
+*.swp
+*.bak
+*.tmp
+*.local
