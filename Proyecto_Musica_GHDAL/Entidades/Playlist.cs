@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Musica_GHDAL.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,10 +8,10 @@ namespace Proyecto_Musica_GHDAL.Entidades
 
         public partial class Playlist
         {
-            public int PlaylistId { get; set; }
+            public int Playlist_ID { get; set; }
             public string? Nombre { get; set; }
-            public string? FechaCreacion { get; set; }
-            public int UsuarioId { get; set; } // FK hacia Usuario
+            public string? Fecha_creacion { get; set; }
+            public int Usuario_ID { get; set; } // FK hacia Usuario
 
             // Propiedad de navegación opcional para enlazar con Usuario
             public Usuario? Usuario { get; set; }
@@ -19,6 +20,7 @@ namespace Proyecto_Musica_GHDAL.Entidades
             public List<RelacionListaCancion>? Canciones { get; set; }
         }
 }
+
 
 
 

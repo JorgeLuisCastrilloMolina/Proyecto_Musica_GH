@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Proyecto_Musica_GHDAL.Entidades
 {
-    public partial class Cancion
+   public partial class Cancion
     {
-        public int CancionId { get; set; }
+        public int Cancion_ID { get; set; }
         public string? Titulo { get; set; }
-        public string? FechaPublicacion { get; set; }
+        public string? Fecha_publicacion { get; set; }
         public int? Duracion { get; set; }   // Puede ser nulo si no se registra duración
-        public string? URLCancion { get; set; }
-        public int AlbumId { get; set; } // FK hacia Album
+        public string? URL_cancion { get; set; }
+        public int Album_ID { get; set; } // FK hacia Album
 
         // Propiedad de navegación opcional para enlazar con Album
         public Album? Album { get; set; }
