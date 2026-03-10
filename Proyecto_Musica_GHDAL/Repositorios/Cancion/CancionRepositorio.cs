@@ -8,9 +8,9 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Cancion
 {
     public class CancionRepositorio : ICancionRepositorio
     {
-        private readonly ProyectoMusicaDbContext _context;
+        private readonly Proyecto_Musica_GHDbContext _context;
 
-        public CancionRepositorio(ProyectoMusicaDbContext context)
+        public CancionRepositorio(Proyecto_Musica_GHDbContext context)
         {
             _context = context;
         }

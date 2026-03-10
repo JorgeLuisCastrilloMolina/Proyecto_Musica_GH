@@ -8,9 +8,9 @@ namespace Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion
 {
     public class RelacionListaCancionRepositorio : IRelacionListaCancionRepositorio
     {
-        private readonly ProyectoMusicaDbContext _context;
+        private readonly Proyecto_Musica_GHDbContext _context;
 
-        public RelacionListaCancionRepositorio(ProyectoMusicaDbContext context)
+        public RelacionListaCancionRepositorio(Proyecto_Musica_GHDbContext context)
         {
             _context = context;
         }
