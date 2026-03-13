@@ -54,12 +54,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Playlist/_CreateCancion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcX0NyZWF0ZUNhbmNpb24uY3NodG1s
+[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Playlist/_CreatePlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcX0NyZWF0ZVBsYXlsaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Playlist/_EditCancion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcX0VkaXRDYW5jaW9uLmNzaHRtbA==
+[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Playlist/_EditPlaylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcX0VkaXRQbGF5bGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Shared/Error.cshtml]
