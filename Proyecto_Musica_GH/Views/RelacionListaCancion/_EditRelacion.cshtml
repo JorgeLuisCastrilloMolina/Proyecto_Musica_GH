@@ -1,0 +1,33 @@
+﻿@model Proyecto_Musica_GHBLL.Dtos.RelacionListaCancion.RelacionListaCancionDto
+
+<div class="modal fade" id="modalEditarRelacion" tabindex="-1" aria-labelledby="modalEditarRelacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Relación Playlist-Canción</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarRelacion" asp-action="EliminarCancionDePlaylist">
+                    <input type="hidden" asp-for="LC_REL_ID" id="RelacionId" />
+                    <div class="mb-3">
+                        <label for="Playlist_ID" class="form-label">Playlist</label>
+                        <input type="number" class="form-control" id="Playlist_ID" name="Playlist_ID" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Cancion_ID" class="form-label">Canción</label>
+                        <input type="number" class="form-control" id="Cancion_ID" name="Cancion_ID" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Orden" class="form-label">Orden</label>
+                        <input type="number" class="form-control" id="Orden" name="Orden" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnEditarRelacion">Editar Relación</button>
+            </div>
+        </div>
+    </div>
+</div>

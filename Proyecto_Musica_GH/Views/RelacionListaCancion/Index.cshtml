@@ -1,0 +1,33 @@
+﻿@using Proyecto_Musica_GHBLL.Dtos.RelacionListaCancion
+@model List<RelacionListaCancionDto>
+
+@{
+    ViewData["Title"] = "Relaciones Playlist-Canción";
+}
+
+<h1>Lista de Canciones en Playlists</h1>
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearRelacion">
+    Agregar Canción a Playlist
+</button>
+
+<table id="tblRelacion" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Playlist</th>
+            <th>Canción</th>
+            <th>Orden</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@await Html.PartialAsync("_CreateRelacion")
+@await Html.PartialAsync("_EditRelacion")
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/RelacionListaCancion.js" asp-append-version="true"></script>
+}

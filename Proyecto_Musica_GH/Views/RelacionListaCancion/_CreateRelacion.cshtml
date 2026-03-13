@@ -1,0 +1,34 @@
+﻿@model Proyecto_Musica_GHBLL.Dtos.RelacionListaCancion.RelacionListaCancionDto
+
+<div class="modal fade" id="modalCrearRelacion" tabindex="-1" aria-labelledby="modalCrearRelacionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Canción a Playlist</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCrearRelacion" asp-action="AgregarCancionAPlaylist">
+                    <div class="mb-3">
+                        <label asp-for="Playlist_ID" class="form-label">Playlist</label>
+                        <input asp-for="Playlist_ID" type="number" class="form-control" required />
+                        <span asp-validation-for="Playlist_ID" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Cancion_ID" class="form-label">Canción</label>
+                        <input asp-for="Cancion_ID" type="number" class="form-control" required />
+                        <span asp-validation-for="Cancion_ID" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Orden" class="form-label">Orden</label>
+                        <input asp-for="Orden" type="number" class="form-control" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardarRelacion">Guardar Relación</button>
+            </div>
+        </div>
+    </div>
+</div>
