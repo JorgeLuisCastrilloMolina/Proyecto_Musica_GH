@@ -1,34 +1,33 @@
-﻿@using Proyecto_Musica_GHBLL.Dtos.Cancion
-@model List<CancionDto>
+﻿@using Proyecto_Musica_GHBLL.Dtos.Playlist
+@model List<PlaylistDto>
 
 @{
-    ViewData["Title"] = "Canciones";
+    ViewData["Title"] = "Playlists";
 }
 
-<h1>Lista de Canciones</h1>
+<h1>Lista de Playlists</h1>
 
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearCancion">
-    Agregar Canción
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearPlaylist">
+    Agregar Playlist
 </button>
 
-<table id="tblCancion" class="table table-striped" style="width:100%">
+<table id="tblPlaylist" class="table table-striped" style="width:100%">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Título</th>
-            <th>Duración</th>
-            <th>Fecha Publicación</th>
-            <th>Álbum</th>
+            <th>Nombre</th>
+            <th>Fecha Creación</th>
+            <th>Usuario</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody></tbody>
 </table>
 
-@await Html.PartialAsync("_CreateCancion")
-@await Html.PartialAsync("_EditCancion")
+@await Html.PartialAsync("_CreatePlaylist")
+@await Html.PartialAsync("_EditPlaylist")
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script src="~/js/Cancion.js" asp-append-version="true"></script>
+    <script src="~/js/Playlist.js" asp-append-version="true"></script>
 }
