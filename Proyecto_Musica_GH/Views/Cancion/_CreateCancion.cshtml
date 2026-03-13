@@ -1,0 +1,39 @@
+﻿@model Proyecto_Musica_GHBLL.Dtos.Cancion.CancionDto
+
+<div class="modal fade" id="modalCrearCancion" tabindex="-1" aria-labelledby="modalCrearCancionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Canción</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCrearCancion" asp-action="AgregarCancion">
+                    <div class="mb-3">
+                        <label asp-for="Titulo" class="form-label">Título</label>
+                        <input asp-for="Titulo" class="form-control" required />
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Duracion" class="form-label">Duración</label>
+                        <input asp-for="Duracion" type="number" class="form-control" required />
+                        <span asp-validation-for="Duracion" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
+                        <input asp-for="Fecha_publicacion" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Album_ID" class="form-label">Álbum</label>
+                        <input asp-for="Album_ID" type="number" class="form-control" required />
+                        <span asp-validation-for="Album_ID" class="text-danger"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardarCancion">Guardar Canción</button>
+            </div>
+        </div>
+    </div>
+</div>
