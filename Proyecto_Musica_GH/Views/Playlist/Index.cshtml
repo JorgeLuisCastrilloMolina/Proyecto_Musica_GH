@@ -1,0 +1,34 @@
+﻿@using Proyecto_Musica_GHBLL.Dtos.Cancion
+@model List<CancionDto>
+
+@{
+    ViewData["Title"] = "Canciones";
+}
+
+<h1>Lista de Canciones</h1>
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearCancion">
+    Agregar Canción
+</button>
+
+<table id="tblCancion" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Duración</th>
+            <th>Fecha Publicación</th>
+            <th>Álbum</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@await Html.PartialAsync("_CreateCancion")
+@await Html.PartialAsync("_EditCancion")
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/Cancion.js" asp-append-version="true"></script>
+}
