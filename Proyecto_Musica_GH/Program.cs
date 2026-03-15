@@ -12,11 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-// Configuración de DbContext con SQLite
+// ConfiguraciÃ³n de DbContext con SQLite
 builder.Services.AddDbContext<Proyecto_Musica_GHDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Repositorios y servicios de Canción
+// Repositorios y servicios de CanciÃ³n
 builder.Services.AddScoped<ICancionRepositorio, CancionRepositorio>();
 builder.Services.AddScoped<ICancionServicio, CancionServicio>();
 
@@ -32,6 +32,34 @@ builder.Services.AddScoped<IRelacionListaCancionServicio, RelacionListaCancionSe
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<Proyecto_Musica_GHDbContext>();
+
+    dbContext.Database.EnsureCreated();
+
+    if (!dbContext.Usuarios.Any())
+    {
+        dbContext.Usuarios.Add(new Proyecto_Musica_GHDAL.Entidades.Usuario
+        {
+            Nombre = "Usuario Demo",
+            Email = "demo@ucr.local",
+            Password = "demo123"
+        });
+    }
+
+    if (!dbContext.Albums.Any())
+    {
+        dbContext.Albums.Add(new Proyecto_Musica_GHDAL.Entidades.Album
+        {
+            Titulo = "Album Demo",
+            Fecha_publicacion = "2026-03-15"
+        });
+    }
+
+    dbContext.SaveChanges();
+}
 
 if (!app.Environment.IsDevelopment())
 {
