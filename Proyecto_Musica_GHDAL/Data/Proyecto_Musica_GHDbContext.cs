@@ -52,9 +52,9 @@ namespace Proyecto_Musica_GHDAL.Data
                 entity.HasKey(e => e.Usuario_ID);
 
                 entity.Property(e => e.Nombre);
-                entity.Property(e => e.Apellido);
-                entity.Property(e => e.Correo);
-                entity.Property(e => e.Contraseña);
+                entity.Property(e => e.Email);
+                entity.Property(e => e.Password);
+
 
                 entity.HasMany(e => e.Playlists)
                       .WithOne(p => p.Usuario)

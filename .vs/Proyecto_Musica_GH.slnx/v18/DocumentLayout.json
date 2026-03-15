@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|solutionrelative:proyecto_musica_ghdal\\data\\proyecto_musica_ghdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghdal\\entidades\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|solutionrelative:proyecto_musica_ghdal\\entidades\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghdal\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|solutionrelative:proyecto_musica_ghdal\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Album.cs",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Entidades\\Album.cs",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GHDAL\\Entidades\\Album.cs",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Entidades\\Album.cs",
-              "RelativeToolTip": "Proyecto_Musica_GHDAL\\Entidades\\Album.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T19:07:32.456Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -45,9 +32,22 @@
               "RelativeDocumentMoniker": "Proyecto_Musica_GHDAL\\Data\\Proyecto_Musica_GHDbContext.cs",
               "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Data\\Proyecto_Musica_GHDbContext.cs",
               "RelativeToolTip": "Proyecto_Musica_GHDAL\\Data\\Proyecto_Musica_GHDbContext.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAADwv2AAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T19:06:46.041Z",
+              "WhenOpened": "2026-03-15T19:21:02.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GHDAL\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "Proyecto_Musica_GHDAL\\Entidades\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T19:20:22.636Z",
               "EditorCaption": ""
             }
           ]
