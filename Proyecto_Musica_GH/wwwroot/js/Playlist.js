@@ -21,6 +21,17 @@
                     { data: 'usuarioNombre' },
                     {
                         data: null,
+                        title: 'Gestión',
+                        orderable: false,
+                        render: function (data, type, row) {
+                            return `
+                                <a class="btn btn-sm btn-outline-secondary" href="/Playlist/Detalle/${row.playlist_ID}">
+                                    Ver canciones
+                                </a>`;
+                        }
+                    },
+                    {
+                        data: null,
                         title: 'Acciones',
                         orderable: false,
                         render: function (data, type, row) {

@@ -33,6 +33,15 @@ namespace Proyecto_Musica_GHBLL.Servicios.Cancion
             return response;
         }
 
+        public async Task<CustomResponse<List<CancionDto>>> ObtenerTodasCancionesAsync()
+        {
+            var response = new CustomResponse<List<CancionDto>>();
+            var canciones = _cancionRepositorio.ObtenerCanciones();
+
+            response.Data = _mapper.Map<List<CancionDto>>(canciones);
+            return response;
+        }
+
         public async Task<CustomResponse<List<CancionDto>>> BuscarCancionesPorTituloAsync(string titulo)
         {
             var response = new CustomResponse<List<CancionDto>>();

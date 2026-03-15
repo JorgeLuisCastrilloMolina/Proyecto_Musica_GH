@@ -15,11 +15,34 @@ namespace Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion
             _context = context;
         }
 
+        public bool ExisteRelacion(int playlistId, int cancionId)
+        {
+            return _context.RelacionesListaCancion.Any(r =>
+                r.Playlist_ID == playlistId && r.Cancion_ID == cancionId);
+        }
+
+        public bool ExistePlaylist(int playlistId)
+        {
+            return _context.Playlists.Any(p => p.Playlist_ID == playlistId);
+        }
+
+        public bool ExisteCancion(int cancionId)
+        {
+            return _context.Canciones.Any(c => c.Cancion_ID == cancionId);
+        }
+
         // Agregar canción a una playlist
         public bool AgregarCancionAPlaylist(Entidades.RelacionListaCancion relacion)
         {
-            _context.RelacionesListaCancion.Add(relacion);
-            return _context.SaveChanges() > 0;
+            try
+            {
+                _context.RelacionesListaCancion.Add(relacion);
+                return _context.SaveChanges() > 0;
+            }
+            catch (DbUpdateException)
+            {
+                return false;
+            }
         }
 
         // Eliminar canción de una playlist
@@ -39,6 +62,8 @@ namespace Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion
                 .Include(r => r.Cancion)
                 .Include(r => r.Playlist)
                 .Where(r => r.Playlist_ID == playlistId)
+                .OrderBy(r => r.Orden ?? int.MaxValue)
+                .ThenBy(r => r.LC_REL_ID)
                 .AsNoTracking()
                 .ToList();
         }

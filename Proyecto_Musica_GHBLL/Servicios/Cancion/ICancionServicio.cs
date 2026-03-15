@@ -9,6 +9,7 @@ namespace Proyecto_Musica_GHBLL.Servicios.Cancion
     public interface ICancionServicio
     {
         Task<CustomResponse<List<CancionDto>>> ObtenerCancionesAsync(int pagina, int tamañoPagina);
+        Task<CustomResponse<List<CancionDto>>> ObtenerTodasCancionesAsync();
         Task<CustomResponse<List<CancionDto>>> BuscarCancionesPorTituloAsync(string titulo);
         Task<CustomResponse<CancionDto>> ObtenerCancionPorIdAsync(int id);
         Task<CustomResponse<CancionDto>> AgregarCancionAsync(CancionDto dto);
