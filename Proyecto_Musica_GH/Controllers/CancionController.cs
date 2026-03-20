@@ -43,11 +43,26 @@ namespace Proyecto_Musica_GH.Controllers
 
         // Crear canción
         [HttpPost]
-        public async Task<IActionResult> AgregarCancion(CancionDto dto)
+        public async Task<IActionResult> AgregarCancion(CancionDto dto, IFormFile ArchivoCancion)
         {
+            if (ArchivoCancion != null && ArchivoCancion.Length > 0)
+            {
+                var ruta = Path.Combine("wwwroot/musica", ArchivoCancion.FileName);
+
+                using (var stream = new FileStream(ruta, FileMode.Create))
+                {
+                    await ArchivoCancion.CopyToAsync(stream);
+                }
+
+                // Guardar la URL relativa en el DTO
+                dto.URL_cancion = "/musica/" + ArchivoCancion.FileName;
+            }
+
             var response = await _cancionServicio.AgregarCancionAsync(dto);
             return Json(response);
         }
+
+
 
         // Editar canción
         [HttpPost]

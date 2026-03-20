@@ -20,7 +20,17 @@
                     { data: 'duracion' },
                     { data: 'fecha_publicacion' },
                     { data: 'albumNombre' },
-                    { data: 'url_cancion' },
+                    {
+                        data: 'url_cancion',
+                        render: function (data, type, row) {
+                            if (!data) return '';
+                            return `<audio controls style="width:250px">
+                    <source src="${data}" type="audio/mpeg">
+                    Tu navegador no soporta audio.
+                </audio>`;
+                        }
+                    },
+
                     {
                         data: null,
                         title: 'Acciones',
@@ -63,17 +73,19 @@
         },
 
         guardarCancion() {
-            let form = $('#formCrearCancion');
-            if (!form.valid()) return;
+            let form = $('#formCrearCancion')[0];
+            let formData = new FormData(form);
 
             $.ajax({
-                url: form.attr('action'),
+                url: $(form).attr('action'),
                 type: 'POST',
-                data: form.serialize(),
+                data: formData,
+                processData: false, 
+                contentType: false, 
                 success: function (response) {
                     if (response.esCorrecto) {
                         $('#modalCrearCancion').modal('hide');
-                        form[0].reset();
+                        form.reset();
                         Cancion.tabla.ajax.reload();
                         Swal.fire('Éxito', response.mensaje, 'success');
                     } else {
