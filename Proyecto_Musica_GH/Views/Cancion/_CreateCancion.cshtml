@@ -19,6 +19,11 @@
                         <input asp-for="Duracion" type="number" class="form-control" required />
                         <span asp-validation-for="Duracion" class="text-danger"></span>
                     </div>
+                    <div class="form-group">
+                        <label for="ArchivoCancion">Archivo de música</label>
+                        <input type="file" id="ArchivoCancion" name="ArchivoCancion" accept=".mp3" class="form-control" />
+                    </div>
+
                     <div class="mb-3">
                         <label asp-for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
                         <input asp-for="Fecha_publicacion" class="form-control" />
@@ -28,11 +33,7 @@
                         <input asp-for="Album_ID" type="number" class="form-control" required />
                         <span asp-validation-for="Album_ID" class="text-danger"></span>
                     </div>
-                    <div class="mb-3">
-                       <label asp-for="URL_cancion" class="form-label">URL Canción</label>
-                       <input asp-for="URL_cancion" class="form-control" required />
-                       <span asp-validation-for="URL_cancion" class="text-danger"></span>
-                      </div>
+               
 
                 </form>
             </div>
