@@ -20,6 +20,7 @@
                     { data: 'duracion' },
                     { data: 'fecha_publicacion' },
                     { data: 'albumNombre' },
+                    { data: 'url_cancion' },
                     {
                         data: null,
                         title: 'Acciones',
@@ -91,6 +92,7 @@
                     $('#Duracion').val(data.duracion);
                     $('#Fecha_publicacion').val(data.fecha_publicacion);
                     $('#Album_ID').val(data.album_ID);
+                    $('#URL_cancion').val(data.url_cancion);
                     $('#modalEditarCancion').modal('show');
                 }
             });
