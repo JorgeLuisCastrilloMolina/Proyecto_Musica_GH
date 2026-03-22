@@ -17,7 +17,7 @@ namespace Proyecto_Musica_GH.Controllers
         // Página principal
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Playlist");
         }
 
         // Obtener canciones de una playlist

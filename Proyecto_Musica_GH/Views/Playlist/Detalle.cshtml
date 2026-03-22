@@ -13,7 +13,10 @@
             Creada: @Model.Playlist?.Fecha_creacion
         </p>
     </div>
-    <a class="btn btn-outline-secondary" asp-controller="Playlist" asp-action="Index">Volver</a>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-primary" asp-controller="Cancion" asp-action="Index">Ir a canciones</a>
+        <a class="btn btn-outline-secondary" asp-controller="Playlist" asp-action="Index">Volver</a>
+    </div>
 </div>
 
 <div class="row g-4">

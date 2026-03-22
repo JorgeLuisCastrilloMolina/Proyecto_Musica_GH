@@ -20,6 +20,7 @@ namespace Proyecto_Musica_GHBLL.Dtos.Playlist
 
         // Solo lectura para mostrar en la tabla o vista
         public string UsuarioNombre { get; set; }
+        public int CancionesCount { get; set; }
     }
 
 }

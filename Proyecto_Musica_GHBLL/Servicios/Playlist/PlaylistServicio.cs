@@ -32,6 +32,20 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
                 return response;
             }
 
+            dto.Nombre = dto.Nombre?.Trim();
+            dto.Fecha_creacion = string.IsNullOrWhiteSpace(dto.Fecha_creacion)
+                ? DateTime.UtcNow.ToString("yyyy-MM-dd")
+                : dto.Fecha_creacion;
+            dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
+
+            if (string.IsNullOrWhiteSpace(dto.Nombre))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "El nombre de la playlist es obligatorio.";
+                response.codigoStatus = 400;
+                return response;
+            }
+
             var playlistGuardar = _mapper.Map<Proyecto_Musica_GHDAL.Entidades.Playlist>(dto);
 
             if (!_playlistRepositorio.AgregarPlaylist(playlistGuardar))
@@ -54,6 +68,28 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
                 response.esCorrecto = false;
                 response.mensaje = "La playlist no puede ser nula.";
                 response.codigoStatus = 400;
+                return response;
+            }
+
+            dto.Nombre = dto.Nombre?.Trim();
+            dto.Fecha_creacion = string.IsNullOrWhiteSpace(dto.Fecha_creacion)
+                ? DateTime.UtcNow.ToString("yyyy-MM-dd")
+                : dto.Fecha_creacion;
+            dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
+
+            if (string.IsNullOrWhiteSpace(dto.Nombre))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "El nombre de la playlist es obligatorio.";
+                response.codigoStatus = 400;
+                return response;
+            }
+
+            if (!_playlistRepositorio.ExistePlaylist(dto.Playlist_ID))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "La playlist no existe.";
+                response.codigoStatus = 404;
                 return response;
             }
 
@@ -82,7 +118,30 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
                 return response;
             }
 
-            _playlistRepositorio.EliminarPlaylist(id);
+            if (!_playlistRepositorio.ExistePlaylist(id))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "La playlist no existe.";
+                response.codigoStatus = 404;
+                return response;
+            }
+
+            if (_playlistRepositorio.TieneCancionesAsociadas(id))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "Primero debes quitar las canciones asociadas a esta playlist.";
+                response.codigoStatus = 409;
+                return response;
+            }
+
+            if (!_playlistRepositorio.EliminarPlaylist(id))
+            {
+                response.esCorrecto = false;
+                response.mensaje = "No se pudo eliminar la playlist.";
+                response.codigoStatus = 500;
+                return response;
+            }
+
             return response;
         }
 
@@ -114,7 +173,8 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
                 Nombre = p.Nombre,
                 Fecha_creacion = p.Fecha_creacion,
                 Usuario_ID = p.Usuario_ID,
-                UsuarioNombre = p.Usuario?.Nombre
+                UsuarioNombre = p.Usuario?.Nombre,
+                CancionesCount = p.Canciones?.Count ?? 0
             }).ToList();
 
             return response;

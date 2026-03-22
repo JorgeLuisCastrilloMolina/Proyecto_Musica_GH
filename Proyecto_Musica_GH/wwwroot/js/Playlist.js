@@ -19,6 +19,7 @@
                     { data: 'nombre' },
                     { data: 'fecha_creacion' },
                     { data: 'usuarioNombre' },
+                    { data: 'cancionesCount' },
                     {
                         data: null,
                         title: 'Gestión',
@@ -99,7 +100,6 @@
                     $('#PlaylistId').val(data.playlist_ID);
                     $('#Nombre').val(data.nombre);
                     $('#Fecha_creacion').val(data.fecha_creacion);
-                    $('#Usuario_ID').val(data.usuario_ID);
                     $('#modalEditarPlaylist').modal('show');
                 }
             });
@@ -143,6 +143,8 @@
                             if (response.esCorrecto) {
                                 Playlist.tabla.ajax.reload();
                                 Swal.fire('Éxito', response.mensaje, 'success');
+                            } else {
+                                Swal.fire('Error', response.mensaje, 'warning');
                             }
                         }
                     });

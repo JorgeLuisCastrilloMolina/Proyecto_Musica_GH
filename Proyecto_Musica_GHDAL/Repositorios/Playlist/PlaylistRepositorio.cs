@@ -21,6 +21,16 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Playlist
             return _context.SaveChanges() > 0;
         }
 
+        public bool ExistePlaylist(int id)
+        {
+            return _context.Playlists.Any(p => p.Playlist_ID == id);
+        }
+
+        public bool TieneCancionesAsociadas(int id)
+        {
+            return _context.RelacionesListaCancion.Any(r => r.Playlist_ID == id);
+        }
+
         public bool EditarPlaylist(Entidades.Playlist playlist)
         {
             var existing = _context.Playlists.Find(playlist.Playlist_ID);
