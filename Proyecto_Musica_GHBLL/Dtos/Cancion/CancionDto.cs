@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Proyecto_Musica_GHBLL.Dtos.Cancion
 {
@@ -18,6 +19,7 @@ namespace Proyecto_Musica_GHBLL.Dtos.Cancion
         public int Duracion { get; set; }
 
         [Required(ErrorMessage = "La URL de la canción es obligatoria")]
+        [JsonPropertyName("url_cancion")]
         public string URL_cancion { get; set; }
 
         [Required(ErrorMessage = "Debe asignar un álbum")]

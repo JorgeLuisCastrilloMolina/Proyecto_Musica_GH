@@ -18,6 +18,7 @@ namespace Proyecto_Musica_GHBLL
             // Cancion
             CreateMap<Proyecto_Musica_GHDAL.Entidades.Cancion, Proyecto_Musica_GHBLL.Dtos.Cancion.CancionDto>()
                 .ForMember(dest => dest.AlbumNombre, opt => opt.MapFrom(src => src.Album.Titulo))
+                .ForMember(dest => dest.URL_cancion, opt => opt.MapFrom(src => src.URL_cancion))
                 .ReverseMap();
 
             // RelacionListaCancion
