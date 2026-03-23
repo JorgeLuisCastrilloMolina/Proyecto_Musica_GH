@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
               "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
               "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-20T03:57:14.446Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Proyecto_Musica_GH\\wwwroot\\js\\Cancion.js",
               "ViewState": "AgIAAE4AAAAAAAAAAAAqwFwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T03:45:59.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T03:45:59.563Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Proyecto_Musica_GH\\Controllers\\CancionController.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T03:41:01.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T03:41:01.603Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Cancion\\_CreateCancion.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAkwCMAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T03:40:16.928Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T03:40:16.928Z"
             }
           ]
         }
