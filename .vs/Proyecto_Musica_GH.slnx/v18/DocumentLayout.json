@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\xampp\\Proyecto_Musica_GH\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\appsettings.json",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\appsettings.json",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\appsettings.json",
+              "RelativeToolTip": "Proyecto_Musica_GH\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-24T08:31:32.117Z",
+              "EditorCaption": ""
             }
           ]
         }
