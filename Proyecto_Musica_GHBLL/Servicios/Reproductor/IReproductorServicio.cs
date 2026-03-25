@@ -1,4 +1,4 @@
-﻿using Proyecto_Musica_GHBLL.Dtos;
+﻿/*using Proyecto_Musica_GHBLL.Dtos;
 using Proyecto_Musica_GHBLL.Dtos.Cancion;
 using System;
 using System.Collections.Generic;
@@ -20,4 +20,26 @@ namespace Proyecto_Musica_GHBLL.Servicios.Reproductor
 
 
 
+}*/
+
+
+
+using Proyecto_Musica_GHBLL.Dtos;
+using Proyecto_Musica_GHBLL.Dtos.Cancion;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Proyecto_Musica_GHBLL.Servicios.Reproductor
+{
+    public interface IReproductorServicio
+    {
+        Task<CustomResponse<CancionDto>> CargarCancionesAsync(); // carga todas las canciones (inicializa)
+        Task<CustomResponse<CancionDto>> ObtenerCancionActualAsync();
+        Task<CustomResponse<List<CancionDto>>> ObtenerTodasCancionesAsync(); // NUEVO: devuelve lista completa
+        Task<CustomResponse<CancionDto>> SeleccionarCancionAsync(int id);
+        Task<CustomResponse<CancionDto>> CancionSiguienteAsync();
+        Task<CustomResponse<CancionDto>> CancionPreviaAsync();
+        Task<CustomResponse<string>> PlayAsync();
+        Task<CustomResponse<string>> DetenerAsync();
+    }
 }
