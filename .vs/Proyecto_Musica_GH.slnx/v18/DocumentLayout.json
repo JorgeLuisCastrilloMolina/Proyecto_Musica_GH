@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\xampp\\Proyecto_Musica_GH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghbll\\servicios\\cancion\\cancionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|solutionrelative:proyecto_musica_ghbll\\servicios\\cancion\\cancionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghbll\\servicios\\cancion\\icancionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|solutionrelative:proyecto_musica_ghbll\\servicios\\cancion\\icancionservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\wwwroot\\js\\cancion.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\wwwroot\\js\\cancion.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\controllers\\cancioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\controllers\\cancioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\cancion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\cancion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\controllers\\reproductorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,85 +34,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ICancionServicio.cs",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Cancion\\ICancionServicio.cs",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GHBLL\\Servicios\\Cancion\\ICancionServicio.cs",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Cancion\\ICancionServicio.cs",
-              "RelativeToolTip": "Proyecto_Musica_GHBLL\\Servicios\\Cancion\\ICancionServicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T05:45:14.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CancionController.cs",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Controllers\\CancionController.cs",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Controllers\\CancionController.cs",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Controllers\\CancionController.cs",
-              "RelativeToolTip": "Proyecto_Musica_GH\\Controllers\\CancionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T05:43:39.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
-              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Cancion\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T05:40:02.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Cancion.js",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\wwwroot\\js\\Cancion.js",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\wwwroot\\js\\Cancion.js",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\wwwroot\\js\\Cancion.js",
-              "RelativeToolTip": "Proyecto_Musica_GH\\wwwroot\\js\\Cancion.js",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAYwKAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-25T05:39:35.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CancionServicio.cs",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Cancion\\CancionServicio.cs",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GHBLL\\Servicios\\Cancion\\CancionServicio.cs",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Cancion\\CancionServicio.cs",
-              "RelativeToolTip": "Proyecto_Musica_GHBLL\\Servicios\\Cancion\\CancionServicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T05:45:11.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\appsettings.json",
               "RelativeDocumentMoniker": "Proyecto_Musica_GH\\appsettings.json",
               "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\appsettings.json",
               "RelativeToolTip": "Proyecto_Musica_GH\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-03-25T05:55:27.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "ReproductorController.cs",
               "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Controllers\\ReproductorController.cs",
               "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Controllers\\ReproductorController.cs",
@@ -145,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "ReproductorServicio.cs",
               "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Reproductor\\ReproductorServicio.cs",
               "RelativeDocumentMoniker": "Proyecto_Musica_GHBLL\\Servicios\\Reproductor\\ReproductorServicio.cs",
@@ -158,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "IReproductorServicio.cs",
               "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\Servicios\\Reproductor\\IReproductorServicio.cs",
               "RelativeDocumentMoniker": "Proyecto_Musica_GHBLL\\Servicios\\Reproductor\\IReproductorServicio.cs",
