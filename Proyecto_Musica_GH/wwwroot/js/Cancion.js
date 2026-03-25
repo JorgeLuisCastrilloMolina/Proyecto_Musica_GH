@@ -80,8 +80,8 @@
                 url: $(form).attr('action'),
                 type: 'POST',
                 data: formData,
-                processData: false, 
-                contentType: false, 
+                processData: false,
+                contentType: false,
                 success: function (response) {
                     if (response.esCorrecto) {
                         $('#modalCrearCancion').modal('hide');
