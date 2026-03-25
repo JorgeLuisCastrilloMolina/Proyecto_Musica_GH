@@ -1,12 +1,13 @@
+using Microsoft.EntityFrameworkCore;
 using Proyecto_Musica_GHBLL;
 using Proyecto_Musica_GHBLL.Servicios.Cancion;
 using Proyecto_Musica_GHBLL.Servicios.Playlist;
 using Proyecto_Musica_GHBLL.Servicios.RelacionListaCancion;
+using Proyecto_Musica_GHBLL.Servicios.Reproductor;
 using Proyecto_Musica_GHDAL.Data;
 using Proyecto_Musica_GHDAL.Repositorios.Cancion;
 using Proyecto_Musica_GHDAL.Repositorios.Playlist;
 using Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,9 @@ builder.Services.AddScoped<IPlaylistServicio, PlaylistServicio>();
 // Repositorios y servicios de RelacionListaCancion
 builder.Services.AddScoped<IRelacionListaCancionRepositorio, RelacionListaCancionRepositorio>();
 builder.Services.AddScoped<IRelacionListaCancionServicio, RelacionListaCancionServicio>();
+
+// Servicio de Reproductor
+builder.Services.AddScoped<IReproductorServicio, ReproductorServicio>();
 
 // AutoMapper con perfil de mapeo
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
