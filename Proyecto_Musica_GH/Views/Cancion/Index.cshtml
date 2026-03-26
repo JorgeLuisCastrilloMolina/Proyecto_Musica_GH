@@ -26,24 +26,6 @@
     <tbody></tbody>
 </table>
 
-<hr />
-
-<!-- 🎧 REPRODUCTOR GLOBAL -->
-<div id="reproductorGlobal" style="position:fixed; bottom:0; width:100%; background:#222; color:white; padding:10px; z-index:999;">
-
-    <strong id="tituloActual">Ninguna canción</strong>
-
-    <br />
-
-    <audio id="audioPlayer" controls style="width:300px;"></audio>
-
-    <br />
-
-    <button id="btnPrev" class="btn btn-light">⏮</button>
-    <button id="btnPlay" class="btn btn-success">▶</button>
-    <button id="btnStop" class="btn btn-danger">⏹</button>
-    <button id="btnNext" class="btn btn-light">⏭</button>
-</div>
 
 @await Html.PartialAsync("_CreateCancion")
 @await Html.PartialAsync("_EditCancion")
