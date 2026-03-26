@@ -50,6 +50,20 @@
         </div>
     </footer>
 
+    <div style="position:fixed; bottom:0; left:0; width:100%; background:#222; color:white; padding:10px; z-index:9999; display:flex; align-items:center; gap:10px;">
+
+        <span id="tituloActual">🎵 Ninguna canción</span>
+
+        <button id="btnPrev" class="btn btn-light btn-sm">⏮</button>
+        <button id="btnPlay" class="btn btn-success btn-sm">▶</button>
+        <button id="btnStop" class="btn btn-danger btn-sm">⏹</button>
+        <button id="btnNext" class="btn btn-light btn-sm">⏭</button>
+
+        <audio id="audioPlayer"></audio>
+    </div>
+
+
+
     <!-- Librerías base -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -64,6 +78,10 @@
     <script src="https://cdn.datatables.net/v/bs5/dt-2.3.6/datatables.min.js"></script>
     <link href="https://cdn.datatables.net/v/bs5/dt-2.3.6/datatables.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- 🔥 REPRODUCTOR GLOBAL -->
+    <script src="~/js/ReproductorGlobal.js"></script>
+    <script src="~/js/ReproductorGlobal.js"></script>
 
     <!-- Scripts propios -->
     <script src="~/js/site.js" asp-append-version="true"></script>

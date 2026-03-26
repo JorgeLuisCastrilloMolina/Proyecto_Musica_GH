@@ -1,11 +1,8 @@
 ﻿(() => {
     const Cancion = {
         tabla: null,
-        audio: null,
 
         init() {
-            this.audio = document.getElementById("audioPlayer");
-
             this.inicializarTabla();
             this.registrarEventos();
         },
@@ -23,6 +20,8 @@
                     { data: 'duracion' },
                     { data: 'fecha_publicacion' },
                     { data: 'albumNombre' },
+
+                    // 🎧 BOTÓN PLAY GLOBAL
                     {
                         data: null,
                         render: function (data, type, row) {
@@ -31,73 +30,137 @@
                                     </button>`;
                         }
                     },
+
+                    // ⚙️ ACCIONES (IMPORTANTE)
                     {
                         data: null,
+                        orderable: false,
                         render: function (data, type, row) {
                             return `
-                                <button class="btn btn-primary btn-editar" data-id="${row.cancion_ID}">Editar</button>
-                                <button class="btn btn-danger btn-eliminar" data-id="${row.cancion_ID}">Eliminar</button>
+                                <button class="btn btn-primary btn-editar" data-id="${row.cancion_ID}">
+                                    Editar
+                                </button>
+                                <button class="btn btn-danger btn-eliminar" data-id="${row.cancion_ID}">
+                                    Eliminar
+                                </button>
                             `;
                         }
                     }
-                ]
+                ],
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+                }
             });
         },
 
         registrarEventos() {
 
-            $('#tblCancion').on('click', '.btn-play', (e) => {
-                let id = $(e.currentTarget).data('id');
-
-                $.post('/Reproductor/SeleccionarCancion', { id: id }, (res) => {
-                    if (!res.esCorrecto) return;
-
-                    let c = res.data;
-
-                    this.audio.src = c.url_cancion;
-                    this.audio.play();
-
-                    $('#tituloActual').text(c.titulo);
-                });
+            // EDITAR
+            $('#tblCancion').on('click', '.btn-editar', function () {
+                const id = $(this).data('id');
+                Cancion.cargarDatosCancion(id);
             });
 
-            $('#btnNext').on('click', () => {
-                $.post('/Reproductor/Siguiente', (res) => {
-                    if (!res.esCorrecto) return;
-
-                    let c = res.data;
-
-                    this.audio.src = c.url_cancion;
-                    this.audio.play();
-
-                    $('#tituloActual').text(c.titulo);
-                });
+            // ELIMINAR
+            $('#tblCancion').on('click', '.btn-eliminar', function () {
+                const id = $(this).data('id');
+                Cancion.eliminarCancion(id);
             });
 
-            $('#btnPrev').on('click', () => {
-                $.post('/Reproductor/Previa', (res) => {
-                    if (!res.esCorrecto) return;
-
-                    let c = res.data;
-
-                    this.audio.src = c.url_cancion;
-                    this.audio.play();
-
-                    $('#tituloActual').text(c.titulo);
-                });
+            // GUARDAR
+            $('#btnGuardarCancion').on('click', function () {
+                Cancion.guardarCancion();
             });
 
-            $('#btnPlay').on('click', () => {
-                this.audio.play();
+            // EDITAR GUARDAR
+            $('#btnEditarCancion').on('click', function () {
+                Cancion.editarCancion();
             });
+        },
 
-            $('#btnStop').on('click', () => {
-                this.audio.pause();
-                this.audio.currentTime = 0;
+        guardarCancion() {
+            let form = $('#formCrearCancion')[0];
+            let formData = new FormData(form);
+
+            $.ajax({
+                url: $(form).attr('action'),
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response.esCorrecto) {
+                        $('#modalCrearCancion').modal('hide');
+                        form.reset();
+                        Cancion.tabla.ajax.reload();
+
+                        Swal.fire('Éxito', response.mensaje, 'success');
+                    } else {
+                        Swal.fire('Error', response.mensaje, 'warning');
+                    }
+                }
             });
+        },
 
-            this.audio.addEventListener('ended', () => {
-                $('#btnNext').click();
+        cargarDatosCancion(id) {
+            $.get(`/Cancion/ObtenerCancionPorId?id=${id}`, function (result) {
+                if (result.esCorrecto) {
+                    let data = result.data;
+
+                    $('#CancionId').val(data.cancion_ID);
+                    $('#Titulo').val(data.titulo);
+                    $('#Duracion').val(data.duracion);
+                    $('#Fecha_publicacion').val(data.fecha_publicacion);
+                    $('#Album_ID').val(data.album_ID);
+                    $('#URL_cancion').val(data.url_cancion);
+
+                    $('#modalEditarCancion').modal('show');
+                }
+            });
+        },
+
+        editarCancion() {
+            let form = $('#formEditarCancion');
+
+            if (!form.valid()) return;
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: form.serialize(),
+                success: function (response) {
+                    if (response.esCorrecto) {
+                        $('#modalEditarCancion').modal('hide');
+                        form[0].reset();
+
+                        Cancion.tabla.ajax.reload();
+
+                        Swal.fire('Éxito', response.mensaje, 'success');
+                    } else {
+                        Swal.fire('Error', response.mensaje, 'warning');
+                    }
+                }
+            });
+        },
+
+        eliminarCancion(id) {
+            Swal.fire({
+                title: '¿Eliminar canción?',
+                text: "No podrás revertir esto",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.post('/Cancion/EliminarCancion', { id: id }, (response) => {
+                        if (response.esCorrecto) {
+                            Cancion.tabla.ajax.reload();
+
+                            Swal.fire('Eliminado', response.mensaje, 'success');
+                        }
+                    });
+                }
             });
         }
     };
