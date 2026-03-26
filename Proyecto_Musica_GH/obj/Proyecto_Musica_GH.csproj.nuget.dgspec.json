@@ -58,6 +58,14 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[16.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.9, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.3.9, )"
             }
           },
           "imports": [
