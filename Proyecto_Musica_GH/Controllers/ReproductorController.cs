@@ -1,6 +1,5 @@
-﻿/*using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Proyecto_Musica_GHBLL.Servicios.Reproductor;
-using System.Threading.Tasks;
 
 namespace Proyecto_Musica_GH.Controllers
 {
@@ -13,130 +12,74 @@ namespace Proyecto_Musica_GH.Controllers
             _reproductorServicio = reproductorServicio;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CargarCanciones()
+        private int ObtenerIndice()
         {
-            var response = await _reproductorServicio.CargarCancionesAsync();
-            return Json(response);
+            var valor = HttpContext.Session.GetString("indice");
+
+            if (string.IsNullOrEmpty(valor))
+                return 0;
+
+            return int.Parse(valor);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CancionActual()
+        private void GuardarIndice(int index)
         {
-            var response = await _reproductorServicio.ObtenerCancionActualAsync();
-            return Json(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Siguiente()
-        {
-            var response = await _reproductorServicio.CancionSiguienteAsync();
-            return Json(response);
+            HttpContext.Session.SetString("indice", index.ToString());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Previa()
+        public IActionResult SeleccionarCancion(int id)
         {
-            var response = await _reproductorServicio.CancionPreviaAsync();
-            return Json(response);
+            var lista = _reproductorServicio.ObtenerListaOrdenada();
+
+            var index = lista.FindIndex(c => c.Cancion_ID == id);
+
+            if (index == -1)
+                return Json(new { esCorrecto = false, mensaje = "No encontrada" });
+
+            GuardarIndice(index);
+
+            return Json(new
+            {
+                esCorrecto = true,
+                data = _reproductorServicio.Mapear(lista[index])
+            });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Play()
+        public IActionResult Siguiente()
         {
-            var response = await _reproductorServicio.PlayAsync();
-            return Json(response);
+            var lista = _reproductorServicio.ObtenerListaOrdenada();
+
+            int indice = ObtenerIndice();
+
+            indice = (indice + 1) % lista.Count;
+
+            GuardarIndice(indice);
+
+            return Json(new
+            {
+                esCorrecto = true,
+                data = _reproductorServicio.Mapear(lista[indice])
+            });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Detener()
+        public IActionResult Previa()
         {
-            var response = await _reproductorServicio.DetenerAsync();
-            return Json(response);
-        }
-        [HttpPost]
-        public async Task<IActionResult> SeleccionarCancion(int id)
-        {
-            var response = await _reproductorServicio.SeleccionarCancionAsync(id);
-            return Json(response);
-        }
-    }
-}
-*/
+            var lista = _reproductorServicio.ObtenerListaOrdenada();
 
+            int indice = ObtenerIndice();
 
+            indice = (indice - 1 + lista.Count) % lista.Count;
 
+            GuardarIndice(indice);
 
-
-using Microsoft.AspNetCore.Mvc;
-using Proyecto_Musica_GHBLL.Servicios.Reproductor;
-using System.Threading.Tasks;
-
-namespace Proyecto_Musica_GH.Controllers
-{
-    public class ReproductorController : Controller
-    {
-        private readonly IReproductorServicio _reproductorServicio;
-
-        public ReproductorController(IReproductorServicio reproductorServicio)
-        {
-            _reproductorServicio = reproductorServicio;
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CargarCanciones()
-        {
-            var response = await _reproductorServicio.CargarCancionesAsync();
-            return Json(response);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> CancionActual()
-        {
-            var response = await _reproductorServicio.ObtenerCancionActualAsync();
-            return Json(response);
-        }
-
-        // NUEVO: devuelve todas las canciones
-        [HttpGet]
-        public async Task<IActionResult> Listar()
-        {
-            var response = await _reproductorServicio.ObtenerTodasCancionesAsync();
-            return Json(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Siguiente()
-        {
-            var response = await _reproductorServicio.CancionSiguienteAsync();
-            return Json(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Previa()
-        {
-            var response = await _reproductorServicio.CancionPreviaAsync();
-            return Json(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Play()
-        {
-            var response = await _reproductorServicio.PlayAsync();
-            return Json(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Detener()
-        {
-            var response = await _reproductorServicio.DetenerAsync();
-            return Json(response);
-        }
-        [HttpPost]
-        public async Task<IActionResult> SeleccionarCancion(int id)
-        {
-            var response = await _reproductorServicio.SeleccionarCancionAsync(id);
-            return Json(response);
+            return Json(new
+            {
+                esCorrecto = true,
+                data = _reproductorServicio.Mapear(lista[indice])
+            });
         }
     }
 }
