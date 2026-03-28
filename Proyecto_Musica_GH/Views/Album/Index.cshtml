@@ -1,0 +1,32 @@
+﻿@using Proyecto_Musica_GHBLL.Dtos.Album
+@model List<AlbumDto>
+
+@{
+    ViewData["Title"] = "Álbumes";
+}
+
+<h1>Lista de Álbumes</h1>
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearAlbum">
+    Agregar Álbum
+</button>
+
+<table id="tblAlbum" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Fecha Publicación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@await Html.PartialAsync("_CreateAlbum")
+@await Html.PartialAsync("_EditAlbum")
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/Album.js"></script>
+}

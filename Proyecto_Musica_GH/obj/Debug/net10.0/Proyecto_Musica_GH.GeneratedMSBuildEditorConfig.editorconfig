@@ -30,6 +30,18 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Album/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxidW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Album/_CreateAlbum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxidW1cX0NyZWF0ZUFsYnVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Album/_EditAlbum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxidW1cX0VkaXRBbGJ1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/xampp/Proyecto_Musica_GH/Proyecto_Musica_GH/Views/Cancion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuY2lvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

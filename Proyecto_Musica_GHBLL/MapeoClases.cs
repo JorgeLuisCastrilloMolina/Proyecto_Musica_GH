@@ -26,6 +26,12 @@ namespace Proyecto_Musica_GHBLL
                 .ForMember(dest => dest.PlaylistNombre, opt => opt.MapFrom(src => src.Playlist.Nombre))
                 .ForMember(dest => dest.CancionTitulo, opt => opt.MapFrom(src => src.Cancion.Titulo))
                 .ReverseMap();
+
+            // Album
+            CreateMap<Proyecto_Musica_GHDAL.Entidades.Album, Proyecto_Musica_GHBLL.Dtos.Album.AlbumDto>()
+                .ForMember(dest => dest.Canciones, opt => opt.MapFrom(src => src.Canciones.Select(c => c.Titulo)))
+                .ReverseMap();
+
         }
 
     }

@@ -1,0 +1,31 @@
+﻿@model Proyecto_Musica_GHBLL.Dtos.Album.AlbumDto
+
+<div class="modal fade" id="modalEditarAlbum" tabindex="-1" aria-labelledby="modalEditarAlbumLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Álbum</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarAlbum" asp-action="EditarAlbum">
+                    <input type="hidden" asp-for="Album_ID" id="AlbumId" />
+
+                    <div class="mb-3">
+                        <label for="Titulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="Titulo" name="Titulo" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
+                        <input type="text" class="form-control" id="Fecha_publicacion" name="Fecha_publicacion" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnEditarAlbum">Editar Álbum</button>
+            </div>
+        </div>
+    </div>
+</div>
