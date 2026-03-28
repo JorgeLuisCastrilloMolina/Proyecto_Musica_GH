@@ -15,42 +15,42 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-// 🔥 BASE DE DATOS
+// BASE DE DATOS
 builder.Services.AddDbContext<Proyecto_Musica_GHDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 🔥 SESSION (AGREGADO)
+
 builder.Services.AddSession();
 
-// 🔥 NECESARIO PARA SESSION (AGREGADO)
+
 builder.Services.AddHttpContextAccessor();
 
-// 🔹 Canción
+//Canción
 builder.Services.AddScoped<ICancionRepositorio, CancionRepositorio>();
 builder.Services.AddScoped<ICancionServicio, CancionServicio>();
 
-// 🔹 Playlist
+//Playlist
 builder.Services.AddScoped<IPlaylistRepositorio, PlaylistRepositorio>();
 builder.Services.AddScoped<IPlaylistServicio, PlaylistServicio>();
 
-// 🔹 Relación Lista-Canción
+//Relación Lista-Canción
 builder.Services.AddScoped<IRelacionListaCancionRepositorio, RelacionListaCancionRepositorio>();
 builder.Services.AddScoped<IRelacionListaCancionServicio, RelacionListaCancionServicio>();
 
-// 🔹 Reproductor
+// Reproductor
 builder.Services.AddScoped<IReproductorServicio, ReproductorServicio>();
 
-// 🔹 Album
+// Album
 builder.Services.AddScoped<IAlbumRepositorio, AlbumRepositorio>();
 builder.Services.AddScoped<IAlbumServicio, AlbumServicio>();
 
 
-// 🔹 AutoMapper
+// AutoMapper
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
 
 var app = builder.Build();
 
-// 🔥 ACTIVAR SESSION (AGREGADO - MUY IMPORTANTE)
+
 app.UseSession();
 
 using (var scope = app.Services.CreateScope())

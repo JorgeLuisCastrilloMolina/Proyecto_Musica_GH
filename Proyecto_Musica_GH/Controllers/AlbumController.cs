@@ -14,27 +14,27 @@ namespace Proyecto_Musica_GH.Controllers
             _albumServicio = albumServicio;
         }
 
-        // Página principal
+        
         public IActionResult Index()
         {
             return View();
         }
 
-        // Obtener todos los álbumes
+     
         public async Task<IActionResult> ObtenerAlbums()
         {
             var response = await _albumServicio.ObtenerAlbumsAsync();
             return Json(response);
         }
 
-        // Obtener álbum por Id
+       
         public async Task<IActionResult> ObtenerAlbumPorId(int id)
         {
             var response = await _albumServicio.ObtenerAlbumPorIdAsync(id);
             return Json(response);
         }
 
-        // Crear álbum
+        
         [HttpPost]
         public async Task<IActionResult> AgregarAlbum(AlbumDto dto)
         {
@@ -42,7 +42,7 @@ namespace Proyecto_Musica_GH.Controllers
             return Json(response);
         }
 
-        // Editar álbum
+     
         [HttpPost]
         public async Task<IActionResult> EditarAlbum(AlbumDto dto)
         {
@@ -50,7 +50,7 @@ namespace Proyecto_Musica_GH.Controllers
             return Json(response);
         }
 
-        // Eliminar álbum
+      
         [HttpPost]
         public async Task<IActionResult> EliminarAlbum(int id)
         {
