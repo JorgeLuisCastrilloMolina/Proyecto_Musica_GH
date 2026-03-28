@@ -19,7 +19,7 @@
                     { data: 'titulo' },
                     { data: 'fecha_publicacion' },
 
-                    // ⚙️ ACCIONES
+                
                     {
                         data: null,
                         orderable: false,
@@ -59,7 +59,7 @@
                 Album.guardarAlbum();
             });
 
-            // EDITAR GUARDAR
+            // EDITAR 
             $('#btnEditarAlbum').on('click', function () {
                 Album.editarAlbum();
             });

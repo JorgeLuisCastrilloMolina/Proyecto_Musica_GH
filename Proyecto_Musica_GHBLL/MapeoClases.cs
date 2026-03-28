@@ -15,11 +15,13 @@ namespace Proyecto_Musica_GHBLL
                 .ForMember(dest => dest.UsuarioNombre, opt => opt.MapFrom(src => src.Usuario.Nombre))
                 .ReverseMap();
 
-            // Cancion
+
+            // Cancion 
             CreateMap<Proyecto_Musica_GHDAL.Entidades.Cancion, Proyecto_Musica_GHBLL.Dtos.Cancion.CancionDto>()
                 .ForMember(dest => dest.AlbumNombre, opt => opt.MapFrom(src => src.Album.Titulo))
-                .ForMember(dest => dest.URL_cancion, opt => opt.MapFrom(src => src.URL_cancion))
-                .ReverseMap();
+                .ForMember(dest => dest.URL_cancion, opt => opt.MapFrom(src => src.URL_cancion));
+
+            CreateMap<Proyecto_Musica_GHBLL.Dtos.Cancion.CancionDto, Proyecto_Musica_GHDAL.Entidades.Cancion>();
 
             // RelacionListaCancion
             CreateMap<Proyecto_Musica_GHDAL.Entidades.RelacionListaCancion, Proyecto_Musica_GHBLL.Dtos.RelacionListaCancion.RelacionListaCancionDto>()

@@ -5,6 +5,7 @@
         init() {
             this.inicializarTabla();
             this.registrarEventos();
+            this.cargarAlbums();
         },
 
         inicializarTabla() {
@@ -21,7 +22,7 @@
                     { data: 'fecha_publicacion' },
                     { data: 'albumNombre' },
 
-                    // 🎧 BOTÓN PLAY GLOBAL
+                    // BOTÓN PLAY GLOBAL
                     {
                         data: null,
                         render: function (data, type, row) {
@@ -31,7 +32,7 @@
                         }
                     },
 
-                    // ⚙️ ACCIONES (IMPORTANTE)
+                   
                     {
                         data: null,
                         orderable: false,
@@ -81,6 +82,8 @@
         guardarCancion() {
             let form = $('#formCrearCancion')[0];
             let formData = new FormData(form);
+           
+            formData.set("Album_ID", $('#AlbumSelect').val());
 
             $.ajax({
                 url: $(form).attr('action'),
@@ -159,6 +162,18 @@
 
                             Swal.fire('Eliminado', response.mensaje, 'success');
                         }
+                    });
+                }
+            });
+        },
+        cargarAlbums() {
+            $.get('/Album/ObtenerAlbums', function (result) {
+                if (result.esCorrecto) {
+                    let select = $('#AlbumSelect');
+                    select.empty();
+                    select.append('<option value="">-- Seleccione un álbum --</option>');
+                    result.data.forEach(album => {
+                        select.append(`<option value="${album.album_ID}">${album.titulo}</option>`);
                     });
                 }
             });
