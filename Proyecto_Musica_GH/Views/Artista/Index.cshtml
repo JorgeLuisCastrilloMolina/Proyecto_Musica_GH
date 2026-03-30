@@ -1,0 +1,33 @@
+@using Proyecto_Musica_GHBLL.Dtos.Artista
+@model List<ArtistaDto>
+
+@{
+    ViewData["Title"] = "Artistas";
+}
+
+<h1>Artistas</h1>
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCrearArtista">
+    Agregar artista
+</button>
+
+<table id="tblArtista" class="table table-striped mt-3" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Álbumes</th>
+            <th>Gestión</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@await Html.PartialAsync("_CreateArtista")
+@await Html.PartialAsync("_EditArtista")
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/Artista.js"></script>
+}

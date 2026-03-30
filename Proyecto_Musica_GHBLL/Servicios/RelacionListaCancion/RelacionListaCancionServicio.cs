@@ -28,7 +28,9 @@ namespace Proyecto_Musica_GHBLL.Servicios.RelacionListaCancion
                 Cancion_ID = r.Cancion_ID,
                 Orden = r.Orden,
                 PlaylistNombre = r.Playlist?.Nombre,
-                CancionTitulo = r.Cancion?.Titulo
+                CancionTitulo = r.Cancion?.Titulo,
+                AlbumNombre = r.Cancion?.Album?.Titulo,
+                Duracion = r.Cancion?.Duracion
             }).ToList();
 
             return response;

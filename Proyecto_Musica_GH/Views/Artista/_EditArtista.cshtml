@@ -1,0 +1,29 @@
+@model Proyecto_Musica_GHBLL.Dtos.Artista.ArtistaDto
+
+<div class="modal fade" id="modalEditarArtista" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar artista</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formEditarArtista" asp-action="EditarArtista">
+                    <input type="hidden" asp-for="Artista_ID" id="ArtistaId" />
+                    <div class="mb-3">
+                        <label for="ArtistaNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="ArtistaNombre" name="Nombre" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="ArtistaBiografia" class="form-label">Biografía</label>
+                        <textarea class="form-control" id="ArtistaBiografia" name="Biografia" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnEditarArtista">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

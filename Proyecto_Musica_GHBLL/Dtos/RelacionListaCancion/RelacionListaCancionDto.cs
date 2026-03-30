@@ -20,6 +20,8 @@ namespace Proyecto_Musica_GHBLL.Dtos.RelacionListaCancion
         // Solo lectura para mostrar nombres en la vista
         public string PlaylistNombre { get; set; }
         public string CancionTitulo { get; set; }
+        public string AlbumNombre { get; set; }
+        public int? Duracion { get; set; }
     }
 
 }

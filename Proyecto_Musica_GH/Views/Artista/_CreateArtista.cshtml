@@ -1,0 +1,28 @@
+@model Proyecto_Musica_GHBLL.Dtos.Artista.ArtistaDto
+
+<div class="modal fade" id="modalCrearArtista" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear artista</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCrearArtista" asp-action="AgregarArtista">
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label">Nombre</label>
+                        <input asp-for="Nombre" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Biografia" class="form-label">Biografía</label>
+                        <textarea asp-for="Biografia" class="form-control" rows="4"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardarArtista">Guardar artista</button>
+            </div>
+        </div>
+    </div>
+</div>

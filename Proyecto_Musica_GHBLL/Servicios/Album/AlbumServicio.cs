@@ -56,7 +56,25 @@ namespace Proyecto_Musica_GHBLL.Servicios.Album
                 return response;
             }
 
-            var entidad = _mapper.Map<Proyecto_Musica_GHDAL.Entidades.Album>(dto);
+            if (dto.Artista_ID <= 0)
+            {
+                response.esCorrecto = false;
+                response.mensaje = "Debe seleccionar un artista válido.";
+                response.codigoStatus = 400;
+                return response;
+            }
+
+            dto.Titulo = dto.Titulo?.Trim();
+            dto.Fecha_publicacion = string.IsNullOrWhiteSpace(dto.Fecha_publicacion)
+                ? DateTime.UtcNow.ToString("yyyy-MM-dd")
+                : dto.Fecha_publicacion;
+
+            var entidad = new Proyecto_Musica_GHDAL.Entidades.Album
+            {
+                Titulo = dto.Titulo,
+                Fecha_publicacion = dto.Fecha_publicacion,
+                Artista_ID = dto.Artista_ID
+            };
 
             if (!_albumRepositorio.AgregarAlbum(entidad))
             {
@@ -81,7 +99,26 @@ namespace Proyecto_Musica_GHBLL.Servicios.Album
                 return response;
             }
 
-            var entidad = _mapper.Map<Proyecto_Musica_GHDAL.Entidades.Album>(dto);
+            if (dto.Album_ID <= 0 || dto.Artista_ID <= 0)
+            {
+                response.esCorrecto = false;
+                response.mensaje = "El álbum o el artista seleccionado no es válido.";
+                response.codigoStatus = 400;
+                return response;
+            }
+
+            dto.Titulo = dto.Titulo?.Trim();
+            dto.Fecha_publicacion = string.IsNullOrWhiteSpace(dto.Fecha_publicacion)
+                ? DateTime.UtcNow.ToString("yyyy-MM-dd")
+                : dto.Fecha_publicacion;
+
+            var entidad = new Proyecto_Musica_GHDAL.Entidades.Album
+            {
+                Album_ID = dto.Album_ID,
+                Titulo = dto.Titulo,
+                Fecha_publicacion = dto.Fecha_publicacion,
+                Artista_ID = dto.Artista_ID
+            };
 
             if (!_albumRepositorio.ActualizarAlbum(entidad))
             {

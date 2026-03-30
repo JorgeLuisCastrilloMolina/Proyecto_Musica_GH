@@ -60,6 +60,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion
         {
             return _context.RelacionesListaCancion
                 .Include(r => r.Cancion)
+                .ThenInclude(c => c.Album)
                 .Include(r => r.Playlist)
                 .Where(r => r.Playlist_ID == playlistId)
                 .OrderBy(r => r.Orden ?? int.MaxValue)

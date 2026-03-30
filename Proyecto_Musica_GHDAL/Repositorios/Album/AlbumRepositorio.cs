@@ -30,6 +30,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Album
 
             existing.Titulo = album.Titulo;
             existing.Fecha_publicacion = album.Fecha_publicacion;
+            existing.Artista_ID = album.Artista_ID;
 
             _context.Albums.Update(existing);
             return _context.SaveChanges() > 0;
@@ -49,6 +50,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Album
         public Entidades.Album ObtenerAlbumPorId(int id)
         {
             return _context.Albums
+                .Include(a => a.Artista)
                 .Include(a => a.Canciones) // incluye las canciones del álbum
                 .AsNoTracking()
                 .FirstOrDefault(a => a.Album_ID == id);
@@ -58,6 +60,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Album
         public List<Entidades.Album> ObtenerAlbums()
         {
             return _context.Albums
+                .Include(a => a.Artista)
                 .Include(a => a.Canciones)
                 .AsNoTracking()
                 .ToList();

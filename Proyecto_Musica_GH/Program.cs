@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Musica_GHBLL;
+using Proyecto_Musica_GHBLL.Servicios.Artista;
 using Proyecto_Musica_GHBLL.Servicios.Album;
 using Proyecto_Musica_GHBLL.Servicios.Cancion;
 using Proyecto_Musica_GHBLL.Servicios.Playlist;
 using Proyecto_Musica_GHBLL.Servicios.RelacionListaCancion;
 using Proyecto_Musica_GHBLL.Servicios.Reproductor;
 using Proyecto_Musica_GHDAL.Data;
+using Proyecto_Musica_GHDAL.Repositorios.Artista;
 using Proyecto_Musica_GHDAL.Repositorios.Album;
 using Proyecto_Musica_GHDAL.Repositorios.Cancion;
 using Proyecto_Musica_GHDAL.Repositorios.Playlist;
@@ -44,6 +46,10 @@ builder.Services.AddScoped<IReproductorServicio, ReproductorServicio>();
 builder.Services.AddScoped<IAlbumRepositorio, AlbumRepositorio>();
 builder.Services.AddScoped<IAlbumServicio, AlbumServicio>();
 
+// Artista
+builder.Services.AddScoped<IArtistaRepositorio, ArtistaRepositorio>();
+builder.Services.AddScoped<IArtistaServicio, ArtistaServicio>();
+
 
 // AutoMapper
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
@@ -69,12 +75,28 @@ using (var scope = app.Services.CreateScope())
         });
     }
 
+    if (!dbContext.Artistas.Any())
+    {
+        dbContext.Artistas.Add(new Proyecto_Musica_GHDAL.Entidades.Artista
+        {
+            Nombre = "Artista Demo",
+            Biografia = "Artista creado para pruebas locales del proyecto."
+        });
+        dbContext.SaveChanges();
+    }
+
     if (!dbContext.Albums.Any())
     {
+        var artistaDemoId = dbContext.Artistas
+            .OrderBy(a => a.Artista_ID)
+            .Select(a => a.Artista_ID)
+            .FirstOrDefault();
+
         dbContext.Albums.Add(new Proyecto_Musica_GHDAL.Entidades.Album
         {
             Titulo = "Album Demo",
-            Fecha_publicacion = "2026-03-15"
+            Fecha_publicacion = "2026-03-15",
+            Artista_ID = artistaDemoId
         });
     }
 

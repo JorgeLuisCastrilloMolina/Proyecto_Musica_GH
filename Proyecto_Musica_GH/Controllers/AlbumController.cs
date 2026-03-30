@@ -34,6 +34,17 @@ namespace Proyecto_Musica_GH.Controllers
             return Json(response);
         }
 
+        public async Task<IActionResult> Detalle(int id)
+        {
+            var response = await _albumServicio.ObtenerAlbumPorIdAsync(id);
+            if (!response.esCorrecto || response.Data is null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(response.Data);
+        }
+
         
         [HttpPost]
         public async Task<IActionResult> AgregarAlbum(AlbumDto dto)

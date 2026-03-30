@@ -1,0 +1,70 @@
+@model Proyecto_Musica_GHBLL.Dtos.Artista.ArtistaDto
+
+@{
+    ViewData["Title"] = "Detalle de Artista";
+}
+
+<section class="hero-card mb-4">
+    <span class="eyebrow">Perfil de artista</span>
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+        <div>
+            <h1 class="mb-2">@Model.Nombre</h1>
+            <p class="text-muted mb-0">Explora su presencia dentro de la biblioteca: biografía, álbumes asociados y contexto general.</p>
+        </div>
+        <div class="d-flex align-items-start">
+            <a class="btn btn-outline-secondary" asp-controller="Artista" asp-action="Index">Volver al catálogo</a>
+        </div>
+    </div>
+
+    <div class="metric-grid">
+        <div class="metric-card">
+            <span class="metric-label">Álbumes</span>
+            <span class="metric-value">@(Model.Albumes?.Count ?? 0)</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-label">Estado</span>
+            <span class="metric-value">@(string.IsNullOrWhiteSpace(Model.Biografia) ? "Básico" : "Completo")</span>
+        </div>
+    </div>
+</section>
+
+<div class="row g-4">
+    <div class="col-lg-5">
+        <section class="content-card h-100">
+            <div class="card-body">
+                <h2 class="section-title">Biografía</h2>
+                <p class="mb-0">@(string.IsNullOrWhiteSpace(Model.Biografia) ? "Sin biografía registrada todavía. Puedes completarla desde la gestión de artistas." : Model.Biografia)</p>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-7">
+        <section class="content-card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="section-title mb-0">Álbumes publicados</h2>
+                    <span class="pill">@(Model.Albumes?.Count ?? 0) registrados</span>
+                </div>
+
+                @if (Model.Albumes?.Any() ?? false)
+                {
+                    <div class="spotlight-list">
+                        @foreach (var album in Model.Albumes)
+                        {
+                            <div class="spotlight-item">
+                                <div class="spotlight-text">
+                                    <strong>@album</strong>
+                                    <span>Disponible dentro del catálogo del proyecto.</span>
+                                </div>
+                                <span class="pill">Álbum</span>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted mb-0">Este artista todavía no tiene álbumes asociados.</p>
+                }
+            </div>
+        </section>
+    </div>
+</div>

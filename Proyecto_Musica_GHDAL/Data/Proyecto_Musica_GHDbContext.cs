@@ -23,6 +23,9 @@ namespace Proyecto_Musica_GHDAL.Data
         // DbSet para Albums
         public virtual DbSet<Album> Albums { get; set; }
 
+        // DbSet para Artistas
+        public virtual DbSet<Artista> Artistas { get; set; }
+
         // DbSet para RelacionListaCancion
         public virtual DbSet<RelacionListaCancion> RelacionesListaCancion { get; set; }
 
@@ -73,7 +76,7 @@ namespace Proyecto_Musica_GHDAL.Data
                 entity.Property(e => e.URL_cancion);
 
                 entity.HasOne(e => e.Album)
-                      .WithMany()
+                      .WithMany(a => a.Canciones)
                       .HasForeignKey(e => e.Album_ID);
             });
 
@@ -101,10 +104,28 @@ namespace Proyecto_Musica_GHDAL.Data
 
                 entity.Property(e => e.Titulo);
                 entity.Property(e => e.Fecha_publicacion);
+                entity.Property(e => e.Artista_ID);
 
                 entity.HasMany(e => e.Canciones)
                       .WithOne(c => c.Album)
                       .HasForeignKey(c => c.Album_ID);
+
+                entity.HasOne(e => e.Artista)
+                      .WithMany(a => a.Albums)
+                      .HasForeignKey(e => e.Artista_ID);
+            });
+
+            modelBuilder.Entity<Artista>(entity =>
+            {
+                entity.ToTable("ARTISTA");
+                entity.HasKey(e => e.Artista_ID);
+
+                entity.Property(e => e.Nombre);
+                entity.Property(e => e.Biografia);
+
+                entity.HasMany(e => e.Albums)
+                      .WithOne(a => a.Artista)
+                      .HasForeignKey(a => a.Artista_ID);
             });
 
 

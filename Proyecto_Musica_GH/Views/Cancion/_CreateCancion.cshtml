@@ -26,15 +26,19 @@
 
                     <div class="mb-3">
                         <label asp-for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
-                        <input asp-for="Fecha_publicacion" class="form-control" />
+                        <input asp-for="Fecha_publicacion" type="date" class="form-control" />
                     </div>
-           <div class="mb-3">
-    <label asp-for="Album_ID" class="form-label">Álbum</label>
-    <select asp-for="Album_ID" class="form-control" id="AlbumSelect" required>
-        <option value="">-- Seleccione un álbum --</option>
-    </select>
-    <span asp-validation-for="Album_ID" class="text-danger"></span>
-</div>
+                    <div class="mb-3">
+                        <label asp-for="Album_ID" class="form-label">Álbum</label>
+                        <select asp-for="Album_ID" class="form-control" id="AlbumSelect" required>
+                            <option value="">-- Seleccione un álbum --</option>
+                        </select>
+                        <span asp-validation-for="Album_ID" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Artista del álbum</label>
+                        <input type="text" class="form-control" id="ArtistaPreview" value="Seleccione un álbum" readonly />
+                    </div>
                
 
                 </form>

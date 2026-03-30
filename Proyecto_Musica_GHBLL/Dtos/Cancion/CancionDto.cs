@@ -24,9 +24,11 @@ namespace Proyecto_Musica_GHBLL.Dtos.Cancion
 
         [Required(ErrorMessage = "Debe asignar un álbum")]
         public int Album_ID { get; set; }
+        public int Artista_ID { get; set; }
 
         // Solo lectura para mostrar en la vista
         public string AlbumNombre { get; set; }
+        public string? ArtistaNombre { get; set; }
     }
 
 }
