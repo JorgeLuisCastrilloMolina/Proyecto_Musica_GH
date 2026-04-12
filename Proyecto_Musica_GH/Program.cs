@@ -15,6 +15,16 @@ using Proyecto_Musica_GHDAL.Repositorios.RelacionListaCancion;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Agregar HttpClient y LoginApiClient
+builder.Services.AddHttpClient<Proyecto_Musica_GH.Services.LoginApiClient>(client =>
+{
+    // Aquí pones la URL base de tu Minimal API
+    client.BaseAddress = new Uri("https://localhost:7026");
+});
+
+
+
 builder.Services.AddControllersWithViews();
 
 // BASE DE DATOS
@@ -117,7 +127,8 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Login}/{action=Index}/{id?}")
+
     .WithStaticAssets();
 
 app.Run();

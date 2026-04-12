@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Login_MinimalAPI/Login_MinimalAPI.csproj" Id="17042b72-7a28-4a11-8c3f-bb71a2b7d85b" />
   <Project Path="Proyecto_Musica_GH/Proyecto_Musica_GH.csproj" />
   <Project Path="Proyecto_Musica_GHBLL/Proyecto_Musica_GHBLL.csproj" />
   <Project Path="Proyecto_Musica_GHDAL/Proyecto_Musica_GHDAL.csproj" />
