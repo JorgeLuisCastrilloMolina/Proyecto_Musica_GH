@@ -5,6 +5,7 @@
         init() {
             this.inicializarTabla();
             this.registrarEventos();
+            this.cargarArtistas();
         },
 
         inicializarTabla() {
@@ -17,9 +18,24 @@
                 columns: [
                     { data: 'album_ID' },
                     { data: 'titulo' },
-                    { data: 'fecha_publicacion' },
-
-                
+                    {
+                        data: 'artistaNombre',
+                        defaultContent: '',
+                        render: function (data) {
+                            return data || 'Sin artista';
+                        }
+                    },
+                    {
+                        data: 'fecha_publicacion',
+                        defaultContent: ''
+                    },
+                    {
+                        data: null,
+                        orderable: false,
+                        render: function (data, type, row) {
+                            return `<a class="btn btn-sm btn-outline-secondary" href="/Album/Detalle/${row.album_ID}">Ver canciones</a>`;
+                        }
+                    },
                     {
                         data: null,
                         orderable: false,
@@ -66,17 +82,19 @@
         },
 
         guardarAlbum() {
-            let form = $('#formCrearAlbum')[0];
-            let formData = $(form).serialize();
+            let form = $('#formCrearAlbum');
+            let formData = form.serializeArray();
+            formData = formData.filter(x => x.name !== 'Artista_ID');
+            formData.push({ name: 'Artista_ID', value: $('#ArtistaSelect').val() });
 
             $.ajax({
-                url: $(form).attr('action'),
+                url: form.attr('action'),
                 type: 'POST',
                 data: formData,
                 success: function (response) {
                     if (response.esCorrecto) {
                         $('#modalCrearAlbum').modal('hide');
-                        form.reset();
+                        form[0].reset();
                         Album.tabla.ajax.reload();
 
                         Swal.fire('Éxito', response.mensaje, 'success');
@@ -95,6 +113,7 @@
                     $('#AlbumId').val(data.album_ID);
                     $('#Titulo').val(data.titulo);
                     $('#Fecha_publicacion').val(data.fecha_publicacion);
+                    $('#Artista_ID').val(data.artista_ID);
 
                     $('#modalEditarAlbum').modal('show');
                 }
@@ -106,10 +125,14 @@
 
             if (!form.valid()) return;
 
+            let formData = form.serializeArray();
+            formData = formData.filter(x => x.name !== 'Artista_ID');
+            formData.push({ name: 'Artista_ID', value: $('#Artista_ID').val() });
+
             $.ajax({
                 url: form.attr('action'),
                 type: 'POST',
-                data: form.serialize(),
+                data: formData,
                 success: function (response) {
                     if (response.esCorrecto) {
                         $('#modalEditarAlbum').modal('hide');
@@ -141,6 +164,23 @@
                         }
                     });
                 }
+            });
+        },
+        cargarArtistas() {
+            $.get('/Artista/ObtenerArtistas', function (result) {
+                if (!result.esCorrecto) return;
+
+                const selectCrear = $('#ArtistaSelect');
+                const selectEditar = $('#Artista_ID');
+
+                selectCrear.empty().append('<option value="">-- Seleccione un artista --</option>');
+                selectEditar.empty().append('<option value="">-- Seleccione un artista --</option>');
+
+                result.data.forEach(artista => {
+                    const option = `<option value="${artista.artista_ID}">${artista.nombre}</option>`;
+                    selectCrear.append(option);
+                    selectEditar.append(option);
+                });
             });
         }
     };

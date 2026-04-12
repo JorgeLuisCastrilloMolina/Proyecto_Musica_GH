@@ -18,9 +18,22 @@
                 columns: [
                     { data: 'cancion_ID' },
                     { data: 'titulo' },
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            if (!row.artista_ID) return row.artistaNombre || '-';
+                            return `<a href="/Artista/Detalle/${row.artista_ID}">${row.artistaNombre || 'Ver artista'}</a>`;
+                        }
+                    },
                     { data: 'duracion' },
                     { data: 'fecha_publicacion' },
-                    { data: 'albumNombre' },
+                    {
+                        data: null,
+                        render: function (data, type, row) {
+                            if (!row.album_ID) return row.albumNombre || '-';
+                            return `<a href="/Album/Detalle/${row.album_ID}">${row.albumNombre || 'Ver álbum'}</a>`;
+                        }
+                    },
 
                     // BOTÓN PLAY GLOBAL
                     {
@@ -76,6 +89,11 @@
             // EDITAR GUARDAR
             $('#btnEditarCancion').on('click', function () {
                 Cancion.editarCancion();
+            });
+
+            $('#AlbumSelect').on('change', function () {
+                const artista = $(this).find('option:selected').data('artista');
+                $('#ArtistaPreview').val(artista || 'Seleccione un álbum');
             });
         },
 
@@ -173,7 +191,7 @@
                     select.empty();
                     select.append('<option value="">-- Seleccione un álbum --</option>');
                     result.data.forEach(album => {
-                        select.append(`<option value="${album.album_ID}">${album.titulo}</option>`);
+                        select.append(`<option value="${album.album_ID}" data-artista="${album.artistaNombre || 'Sin artista'}">${album.titulo}</option>`);
                     });
                 }
             });

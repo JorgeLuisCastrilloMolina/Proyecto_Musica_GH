@@ -13,6 +13,8 @@ namespace Proyecto_Musica_GHBLL.Dtos.Album
         public string Titulo { get; set; }
 
         public string? Fecha_publicacion { get; set; }
+        public int Artista_ID { get; set; }
+        public string? ArtistaNombre { get; set; }
 
         // Solo lectura para mostrar canciones asociadas
         public List<string>? Canciones { get; set; }

@@ -53,6 +53,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Cancion
         {
             return _context.Canciones
                 .Include(c => c.Album) // incluye info del álbum
+                .ThenInclude(a => a.Artista)
                 .AsNoTracking()
                 .FirstOrDefault(c => c.Cancion_ID == id);
         }
@@ -62,6 +63,7 @@ namespace Proyecto_Musica_GHDAL.Repositorios.Cancion
         {
             return _context.Canciones
                 .Include(c => c.Album)
+                .ThenInclude(a => a.Artista)
                 .AsNoTracking()
                 .ToList();
         }

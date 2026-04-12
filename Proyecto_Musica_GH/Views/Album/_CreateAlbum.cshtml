@@ -17,8 +17,14 @@
 
                     <div class="mb-3">
                         <label asp-for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
-                        <input asp-for="Fecha_publicacion" class="form-control" />
+                        <input asp-for="Fecha_publicacion" type="date" class="form-control" />
                         <span asp-validation-for="Fecha_publicacion" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Artista_ID" class="form-label">Artista</label>
+                        <select asp-for="Artista_ID" class="form-select" id="ArtistaSelect" required>
+                            <option value="">-- Seleccione un artista --</option>
+                        </select>
                     </div>
                 </form>
             </div>

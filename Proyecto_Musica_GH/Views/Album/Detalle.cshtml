@@ -1,0 +1,67 @@
+@model Proyecto_Musica_GHBLL.Dtos.Album.AlbumDto
+
+@{
+    ViewData["Title"] = "Detalle de Álbum";
+}
+
+<section class="hero-card mb-4">
+    <span class="eyebrow">Detalle de álbum</span>
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+        <div>
+            <h1 class="mb-2">@Model.Titulo</h1>
+            <p class="text-muted mb-0">
+                Artista:
+                @if (Model.Artista_ID > 0)
+                {
+                    <a asp-controller="Artista" asp-action="Detalle" asp-route-id="@Model.Artista_ID">@Model.ArtistaNombre</a>
+                }
+                else
+                {
+                    <span>@(string.IsNullOrWhiteSpace(Model.ArtistaNombre) ? "Sin artista" : Model.ArtistaNombre)</span>
+                }
+            </p>
+        </div>
+        <div class="d-flex align-items-start">
+            <a class="btn btn-outline-secondary" asp-controller="Album" asp-action="Index">Volver al catálogo</a>
+        </div>
+    </div>
+
+    <div class="metric-grid">
+        <div class="metric-card">
+            <span class="metric-label">Canciones</span>
+            <span class="metric-value">@(Model.Canciones?.Count ?? 0)</span>
+        </div>
+        <div class="metric-card">
+            <span class="metric-label">Fecha</span>
+            <span class="metric-value">@(string.IsNullOrWhiteSpace(Model.Fecha_publicacion) ? "-" : Model.Fecha_publicacion)</span>
+        </div>
+    </div>
+</section>
+
+<section class="content-card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="section-title mb-0">Tracklist</h2>
+            <span class="pill">Álbum completo</span>
+        </div>
+        @if (Model.Canciones?.Any() ?? false)
+        {
+            <div class="track-list">
+                @foreach (var cancion in Model.Canciones)
+                {
+                    <div class="track-item">
+                        <div class="track-text">
+                            <strong>@cancion</strong>
+                            <span>Disponible para gestionar y reproducir dentro del proyecto.</span>
+                        </div>
+                        <span class="pill">Track</span>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="text-muted mb-0">Este álbum todavía no tiene canciones.</p>
+        }
+    </div>
+</section>
