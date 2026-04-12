@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Proyecto_Musica_GHDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8cd342fc03c23d29a2c6a61b5f0953fb049cf0a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4328f7bcf596a395afb2aa40568a5b6db5ffffe")]
 [assembly: System.Reflection.AssemblyProductAttribute("Proyecto_Musica_GHDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Proyecto_Musica_GHDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

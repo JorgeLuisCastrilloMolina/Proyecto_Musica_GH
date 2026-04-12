@@ -11,12 +11,12 @@ namespace Proyecto_Musica_GHBLL.Dtos.Cancion
         public int Cancion_ID { get; set; }
 
         [Required(ErrorMessage = "El título de la canción es obligatorio")]
-        public string Titulo { get; set; }
+        public string? Titulo { get; set; }
 
         public string? Fecha_publicacion { get; set; }
 
         [Required(ErrorMessage = "La duración es obligatoria")]
-        public int Duracion { get; set; }
+        public int? Duracion { get; set; }
 
         [Required(ErrorMessage = "La URL de la canción es obligatoria")]
         [JsonPropertyName("url_cancion")]
