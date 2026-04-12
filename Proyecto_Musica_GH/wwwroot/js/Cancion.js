@@ -129,9 +129,10 @@
                     let data = result.data;
 
                     $('#CancionId').val(data.cancion_ID);
-                    $('#Titulo').val(data.titulo);
-                    $('#Duracion').val(data.duracion);
-                    $('#Fecha_publicacion').val(data.fecha_publicacion);
+                    $('#TituloEditar').val(data.titulo || '');
+                    $('#DuracionEditar').val(data.duracion ?? '');
+                    $('#Fecha_publicacionEditar').val(data.fecha_publicacion);
+
                     $('#Album_ID').val(data.album_ID);
                     $('#URL_cancion').val(data.url_cancion);
 
