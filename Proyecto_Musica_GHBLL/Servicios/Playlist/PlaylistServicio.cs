@@ -36,7 +36,7 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
             dto.Fecha_creacion = string.IsNullOrWhiteSpace(dto.Fecha_creacion)
                 ? DateTime.UtcNow.ToString("yyyy-MM-dd")
                 : dto.Fecha_creacion;
-            dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
+            //dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
 
             if (string.IsNullOrWhiteSpace(dto.Nombre))
             {
@@ -75,7 +75,7 @@ namespace Proyecto_Musica_GHBLL.Servicios.Playlist
             dto.Fecha_creacion = string.IsNullOrWhiteSpace(dto.Fecha_creacion)
                 ? DateTime.UtcNow.ToString("yyyy-MM-dd")
                 : dto.Fecha_creacion;
-            dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
+            //dto.Usuario_ID = dto.Usuario_ID <= 0 ? 1 : dto.Usuario_ID;
 
             if (string.IsNullOrWhiteSpace(dto.Nombre))
             {

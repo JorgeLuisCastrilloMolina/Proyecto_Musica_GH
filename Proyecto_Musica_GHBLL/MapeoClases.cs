@@ -13,7 +13,9 @@ namespace Proyecto_Musica_GHBLL
             // Playlist
             CreateMap<Proyecto_Musica_GHDAL.Entidades.Playlist, Proyecto_Musica_GHBLL.Dtos.Playlist.PlaylistDto>()
                 .ForMember(dest => dest.UsuarioNombre, opt => opt.MapFrom(src => src.Usuario.Nombre))
-                .ReverseMap();
+                .ReverseMap()
+                .ForMember(dest => dest.Usuario, opt => opt.Ignore()); // 👉 Ignorar la navegación
+
 
 
             // Cancion 
