@@ -41,7 +41,9 @@ app.MapPost("/register", async (Usuario nuevoUsuario, AppDbContext db) =>
     {
         message = "Usuario registrado correctamente",
         usuario = nuevoUsuario.Nombre,
-        email = nuevoUsuario.Email
+        email = nuevoUsuario.Email,
+        usuario_ID = nuevoUsuario.Usuario_ID   //  Esto fue lo que se agregó
+
     });
 })
 .WithName("Register")
@@ -60,7 +62,9 @@ app.MapPost("/login", async (LoginRequest req, AppDbContext db) =>
     {
         message = "Login exitoso",
         usuario = user.Nombre,
-        email = user.Email
+        email = user.Email,
+        usuario_ID = user.Usuario_ID   //  Esto fue lo que se agregó
+
     });
 })
 .WithName("Login")

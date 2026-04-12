@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\xampp\\Proyecto_Musica_GH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\login\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\login\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghbll\\mapeoclases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35A42731-9230-C1DF-09C5-9E559B4A2381}|Proyecto_Musica_GHBLL\\Proyecto_Musica_GHBLL.csproj|solutionrelative:proyecto_musica_ghbll\\mapeoclases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_ghdal\\repositorios\\playlist\\playlistrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{653B13AE-436D-2BD5-1AFC-F7CF11293D4A}|Proyecto_Musica_GHDAL\\Proyecto_Musica_GHDAL.csproj|solutionrelative:proyecto_musica_ghdal\\repositorios\\playlist\\playlistrepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +26,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlaylistRepositorio.cs",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Repositorios\\Playlist\\PlaylistRepositorio.cs",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GHDAL\\Repositorios\\Playlist\\PlaylistRepositorio.cs",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHDAL\\Repositorios\\Playlist\\PlaylistRepositorio.cs",
+              "RelativeToolTip": "Proyecto_Musica_GHDAL\\Repositorios\\Playlist\\PlaylistRepositorio.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwDkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T20:48:35.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Success.cshtml",
-              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
-              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
-              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-12T17:55:41.415Z",
+              "Title": "MapeoClases.cs",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\MapeoClases.cs",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GHBLL\\MapeoClases.cs",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GHBLL\\MapeoClases.cs",
+              "RelativeToolTip": "Proyecto_Musica_GHBLL\\MapeoClases.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-12T20:48:04.793Z",
               "EditorCaption": ""
             }
           ]
