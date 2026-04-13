@@ -20,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient<Proyecto_Musica_GH.Services.LoginApiClient>(client =>
 {
     // Aquí pones la URL base de tu Minimal API
-    client.BaseAddress = new Uri("https://localhost:7026");
+    client.BaseAddress = new Uri("http://localhost:5106");
 });
 
 
@@ -149,7 +149,7 @@ var builder = WebApplication.CreateBuilder(args);
 // 👉 HttpClient para consumir la Minimal API
 builder.Services.AddHttpClient<Proyecto_Musica_GH.Services.LoginApiClient>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7026"); // URL de tu Minimal API
+    client.BaseAddress = new Uri("http://localhost:5106"); // URL de tu Minimal API
 });
 
 // 👉 Controladores con vistas
