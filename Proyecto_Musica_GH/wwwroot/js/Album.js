@@ -108,17 +108,29 @@
         cargarDatosAlbum(id) {
             $.get(`/Album/ObtenerAlbumPorId?id=${id}`, function (result) {
                 if (result.esCorrecto) {
-                    let data = result.data;
+                    // Buscar el álbum dentro del array
+                    let data = Array.isArray(result.data)
+                        ? result.data.find(a => a.album_ID == id)
+                        : result.data;
+
+                    if (!data) {
+                        console.warn("No se encontró el álbum con id:", id);
+                        return;
+                    }
+
+                    console.log("Titulo recibido:", data.titulo);
+                    console.log("Fecha recibida:", data.fecha_publicacion);
 
                     $('#AlbumId').val(data.album_ID);
-                    $('#Titulo').val(data.titulo);
-                    $('#Fecha_publicacion').val(data.fecha_publicacion);
+                    $('#TituloEditar').val(data.titulo || '');
+                    $('#Fecha_publicacionEditar').val(data.fecha_publicacion || '');
                     $('#Artista_ID').val(data.artista_ID);
 
                     $('#modalEditarAlbum').modal('show');
                 }
             });
         },
+
 
         editarAlbum() {
             let form = $('#formEditarAlbum');
