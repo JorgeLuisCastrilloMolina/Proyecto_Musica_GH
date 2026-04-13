@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\xampp\\Proyecto_Musica_GH\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\login\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\login\\success.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|c:\\xampp\\proyecto_musica_gh\\proyecto_musica_gh\\views\\shared\\_layoutauth.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{830BF77B-57B4-882B-2FD5-B6743997A752}|Proyecto_Musica_GH\\Proyecto_Musica_GH.csproj|solutionrelative:proyecto_musica_gh\\views\\shared\\_layoutauth.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Success.cshtml",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
+              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Login\\Success.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-13T14:08:35.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Register.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Login\\Register.cshtml",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Register.cshtml",
+              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Login\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-13T14:08:31.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-13T14:08:03.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutAuth.cshtml",
+              "DocumentMoniker": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Shared\\_LayoutAuth.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Musica_GH\\Views\\Shared\\_LayoutAuth.cshtml",
+              "ToolTip": "C:\\xampp\\Proyecto_Musica_GH\\Proyecto_Musica_GH\\Views\\Shared\\_LayoutAuth.cshtml",
+              "RelativeToolTip": "Proyecto_Musica_GH\\Views\\Shared\\_LayoutAuth.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-13T14:06:32.192Z",
+              "EditorCaption": ""
             }
           ]
         }
