@@ -34,8 +34,6 @@
                             return `<a href="/Album/Detalle/${row.album_ID}">${row.albumNombre || 'Ver álbum'}</a>`;
                         }
                     },
-
-                    // BOTÓN PLAY GLOBAL
                     {
                         data: null,
                         render: function (data, type, row) {
@@ -44,8 +42,6 @@
                                     </button>`;
                         }
                     },
-
-                   
                     {
                         data: null,
                         orderable: false,
@@ -68,25 +64,20 @@
         },
 
         registrarEventos() {
-
-            // EDITAR
             $('#tblCancion').on('click', '.btn-editar', function () {
                 const id = $(this).data('id');
                 Cancion.cargarDatosCancion(id);
             });
 
-            // ELIMINAR
             $('#tblCancion').on('click', '.btn-eliminar', function () {
                 const id = $(this).data('id');
                 Cancion.eliminarCancion(id);
             });
 
-            // GUARDAR
             $('#btnGuardarCancion').on('click', function () {
                 Cancion.guardarCancion();
             });
 
-            // EDITAR GUARDAR
             $('#btnEditarCancion').on('click', function () {
                 Cancion.editarCancion();
             });
@@ -95,12 +86,17 @@
                 const artista = $(this).find('option:selected').data('artista');
                 $('#ArtistaPreview').val(artista || 'Seleccione un álbum');
             });
+
+            $('#AlbumEditarSelect').on('change', function () {
+                const artista = $(this).find('option:selected').data('artista');
+                $('#ArtistaEditarPreview').val(artista || 'Seleccione un álbum');
+            });
         },
 
         guardarCancion() {
             let form = $('#formCrearCancion')[0];
             let formData = new FormData(form);
-           
+
             formData.set("Album_ID", $('#AlbumSelect').val());
 
             $.ajax({
@@ -129,10 +125,11 @@
                     let data = result.data;
 
                     $('#CancionId').val(data.cancion_ID);
-                    $('#Titulo').val(data.titulo);
-                    $('#Duracion').val(data.duracion);
-                    $('#Fecha_publicacion').val(data.fecha_publicacion);
-                    $('#Album_ID').val(data.album_ID);
+                    $('#TituloEditar').val(data.titulo || '');
+                    $('#DuracionEditar').val(data.duracion ?? '');
+                    $('#Fecha_publicacionEditar').val(data.fecha_publicacion);
+                    $('#AlbumEditarSelect').val(data.album_ID);
+                    $('#ArtistaEditarPreview').val(data.artistaNombre || 'Seleccione un álbum');
                     $('#URL_cancion').val(data.url_cancion);
 
                     $('#modalEditarCancion').modal('show');
@@ -173,7 +170,6 @@
                 confirmButtonText: 'Sí, eliminar'
             }).then((result) => {
                 if (result.isConfirmed) {
-
                     $.post('/Cancion/EliminarCancion', { id: id }, (response) => {
                         if (response.esCorrecto) {
                             Cancion.tabla.ajax.reload();
@@ -184,14 +180,23 @@
                 }
             });
         },
+
         cargarAlbums() {
             $.get('/Album/ObtenerAlbums', function (result) {
                 if (result.esCorrecto) {
-                    let select = $('#AlbumSelect');
-                    select.empty();
-                    select.append('<option value="">-- Seleccione un álbum --</option>');
+                    let selectCrear = $('#AlbumSelect');
+                    let selectEditar = $('#AlbumEditarSelect');
+
+                    selectCrear.empty();
+                    selectEditar.empty();
+
+                    selectCrear.append('<option value="">-- Seleccione un álbum --</option>');
+                    selectEditar.append('<option value="">-- Seleccione un álbum --</option>');
+
                     result.data.forEach(album => {
-                        select.append(`<option value="${album.album_ID}" data-artista="${album.artistaNombre || 'Sin artista'}">${album.titulo}</option>`);
+                        const option = `<option value="${album.album_ID}" data-artista="${album.artistaNombre || 'Sin artista'}">${album.titulo}</option>`;
+                        selectCrear.append(option);
+                        selectEditar.append(option);
                     });
                 }
             });

@@ -21,9 +21,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Proyecto_Musica_GHDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
 builder.Services.AddSession();
-
 
 builder.Services.AddHttpContextAccessor();
 
@@ -50,12 +48,10 @@ builder.Services.AddScoped<IAlbumServicio, AlbumServicio>();
 builder.Services.AddScoped<IArtistaRepositorio, ArtistaRepositorio>();
 builder.Services.AddScoped<IArtistaServicio, ArtistaServicio>();
 
-
 // AutoMapper
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
 
 var app = builder.Build();
-
 
 app.UseSession();
 

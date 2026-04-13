@@ -11,16 +11,16 @@
                 <form id="formEditarCancion" asp-action="EditarCancion">
                     <input type="hidden" asp-for="Cancion_ID" id="CancionId" />
                     <div class="mb-3">
-                        <label for="Titulo" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="Titulo" name="Titulo" required />
+                        <label for="TituloEditar" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="TituloEditar" name="Titulo" required />
                     </div>
                     <div class="mb-3">
-                        <label for="Duracion" class="form-label">Duración</label>
-                        <input type="number" class="form-control" id="Duracion" name="Duracion" required />
+                        <label for="DuracionEditar" class="form-label">Duración</label>
+                        <input type="number" class="form-control" id="DuracionEditar" name="Duracion" required />
                     </div>
                     <div class="mb-3">
-                        <label for="Fecha_publicacion" class="form-label">Fecha Publicación</label>
-                        <input type="text" class="form-control" id="Fecha_publicacion" name="Fecha_publicacion" />
+                        <label for="Fecha_publicacionEditar" class="form-label">Fecha Publicación</label>
+                        <input type="date" class="form-control" id="Fecha_publicacionEditar" name="Fecha_publicacion" />
                     </div>
                     <div class="mb-3">
                         <label for="URL_cancion" class="form-label">URL Canción</label>
@@ -28,8 +28,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="Album_ID" class="form-label">Álbum</label>
-                        <input type="number" class="form-control" id="Album_ID" name="Album_ID" required />
+                        <label for="AlbumEditarSelect" class="form-label">Álbum</label>
+                        <select class="form-select" id="AlbumEditarSelect" name="Album_ID" required>
+                            <option value="">-- Seleccione un álbum --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ArtistaEditarPreview" class="form-label">Artista del álbum</label>
+                        <input type="text" class="form-control" id="ArtistaEditarPreview" value="Seleccione un álbum" readonly />
                     </div>
                 </form>
             </div>
