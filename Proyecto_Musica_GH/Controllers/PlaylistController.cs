@@ -98,6 +98,14 @@ namespace Proyecto_Musica_GH.Controllers
         [HttpPost]
         public async Task<IActionResult> EditarPlaylist(PlaylistDto dto)
         {
+            var usuarioId = HttpContext.Session.GetInt32("UsuarioId");
+            if (usuarioId == null)
+            {
+                return Json(new { esCorrecto = false, mensaje = "Debes iniciar sesión para editar playlists." });
+            }
+
+            dto.Usuario_ID = usuarioId.Value;
+
             var response = await _playlistServicio.EditarPlaylistAsync(dto);
             return Json(response);
         }

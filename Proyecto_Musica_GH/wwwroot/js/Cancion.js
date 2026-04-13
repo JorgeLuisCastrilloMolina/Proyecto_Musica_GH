@@ -131,6 +131,8 @@
                     $('#CancionId').val(data.cancion_ID);
                     $('#TituloEditar').val(data.titulo || '');
                     $('#DuracionEditar').val(data.duracion ?? '');
+                    console.log("Fecha recibida:", data.fecha_publicacion);
+
                     $('#Fecha_publicacionEditar').val(data.fecha_publicacion);
 
                     $('#Album_ID').val(data.album_ID);
