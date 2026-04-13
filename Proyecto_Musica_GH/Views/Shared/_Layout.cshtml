@@ -36,6 +36,10 @@
                         <h1>Biblioteca Musical</h1>
                         <p>Gestiona playlists, artistas, álbumes y canciones desde una interfaz con mejor jerarquía visual y foco en demo.</p>
                     </div>
+                    <div class="user-info">
+                        <strong>Usuario:</strong> @Context.Session.GetString("UsuarioNombre") 
+                    </div>
+
                 </section>
 
                 @RenderBody()
