@@ -1,0 +1,35 @@
+﻿@model Proyecto_Musica_GH.Models.LoginDto
+@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+
+    ViewData["Title"] = "Login";
+}
+
+<section class="mt-4">
+    <h2 class="mb-3">Iniciar Sesión</h2>
+    <form asp-action="Index" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label"></label>
+            <input asp-for="Password" type="password" class="form-control" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <div class="mt-3">
+        <p>
+            ¿No tienes cuenta?
+            <a asp-controller="Login" asp-action="Register" class="btn btn-link">Regístrate aquí</a>
+        </p>
+    </div>
+
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+    }
+</section>

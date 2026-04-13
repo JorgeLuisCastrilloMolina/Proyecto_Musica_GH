@@ -98,8 +98,8 @@
                 if (result.esCorrecto) {
                     let data = result.data;
                     $('#PlaylistId').val(data.playlist_ID);
-                    $('#Nombre').val(data.nombre);
-                    $('#Fecha_creacion').val(data.fecha_creacion);
+                    $('#NombreEditar').val(data.nombre);
+                    $('#Fecha_creacionEditar').val(data.fecha_creacion);
                     $('#modalEditarPlaylist').modal('show');
                 }
             });

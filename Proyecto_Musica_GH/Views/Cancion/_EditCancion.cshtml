@@ -9,22 +9,28 @@
             </div>
             <div class="modal-body">
                 <form id="formEditarCancion" asp-action="EditarCancion">
-                    <input type="hidden" asp-for="Cancion_ID" id="CancionId" />
+                    <!-- Campo oculto para ID -->
+                    <input type="hidden" id="CancionId" name="Cancion_ID" />
+
                     <div class="mb-3">
                         <label for="TituloEditar" class="form-label">Título</label>
                         <input type="text" class="form-control" id="TituloEditar" name="Titulo" required />
                     </div>
+
                     <div class="mb-3">
                         <label for="DuracionEditar" class="form-label">Duración</label>
                         <input type="number" class="form-control" id="DuracionEditar" name="Duracion" required />
                     </div>
+
                     <div class="mb-3">
                         <label for="Fecha_publicacionEditar" class="form-label">Fecha Publicación</label>
                         <input type="date" class="form-control" id="Fecha_publicacionEditar" name="Fecha_publicacion" />
                     </div>
+
+
                     <div class="mb-3">
                         <label for="URL_cancion" class="form-label">URL Canción</label>
-                        <input type="text" class="form-control" id="URL_cancion" name="URL_cancion" required />
+                        <input type="text" class="form-control" id="URL_cancion" name="URL_cancion" />
                     </div>
 
                     <div class="mb-3">
@@ -42,7 +48,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="btnEditarCancion">Editar Canción</button>
+                <button type="button" class="btn btn-primary" id="btnEditarCancion">Guardar cambios</button>
             </div>
         </div>
     </div>

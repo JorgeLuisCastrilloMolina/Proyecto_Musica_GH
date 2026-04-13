@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+
+    ViewData["Title"] = "Éxito";
+}
+
+<section class="mt-4 text-center">
+    <h2>@ViewBag.Message</h2>
+    <p>Bienvenido, <strong>@ViewBag.Usuario</strong></p>
+    <a asp-controller="Cancion" asp-action="Index" class="btn btn-success mt-3">
+        Ir a Canciones
+    </a>
+</section>

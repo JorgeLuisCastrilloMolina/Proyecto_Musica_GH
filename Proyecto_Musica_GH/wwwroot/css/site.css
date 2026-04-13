@@ -362,6 +362,23 @@ a:hover,
   color: var(--text);
 }
 
+.form-select option,
+select option {
+  background: #f7fbf8;
+  color: #102018;
+}
+
+.form-select option:checked,
+select option:checked {
+  background: #1ed760;
+  color: #041008;
+}
+
+.form-select option[value=""],
+select option[value=""] {
+  color: #5d6c64;
+}
+
 .form-control:focus,
 .form-select:focus,
 .btn:focus,
