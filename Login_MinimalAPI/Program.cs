@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Crear la BD si no existe
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -42,14 +42,14 @@ app.MapPost("/register", async (Usuario nuevoUsuario, AppDbContext db) =>
         message = "Usuario registrado correctamente",
         usuario = nuevoUsuario.Nombre,
         email = nuevoUsuario.Email,
-        usuario_ID = nuevoUsuario.Usuario_ID   //  Esto fue lo que se agregó
+        usuario_ID = nuevoUsuario.Usuario_ID   
 
     });
 })
 .WithName("Register")
 .WithOpenApi();
 
-// Endpoint de login
+
 app.MapPost("/login", async (LoginRequest req, AppDbContext db) =>
 {
     var user = await db.Usuarios
@@ -63,7 +63,7 @@ app.MapPost("/login", async (LoginRequest req, AppDbContext db) =>
         message = "Login exitoso",
         usuario = user.Nombre,
         email = user.Email,
-        usuario_ID = user.Usuario_ID   //  Esto fue lo que se agregó
+        usuario_ID = user.Usuario_ID   
 
     });
 })
