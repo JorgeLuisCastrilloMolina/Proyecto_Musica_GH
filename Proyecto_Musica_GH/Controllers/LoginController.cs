@@ -99,13 +99,13 @@ namespace Proyecto_Musica_GH.Controllers
                 return View();
             }
 
-            // 👉 Esto fue lo que se agregó: guardar usuario en sesión
+            
             HttpContext.Session.SetInt32("UsuarioId", result.Usuario_ID);
             HttpContext.Session.SetString("UsuarioNombre", result.Usuario);
             Console.WriteLine($"Sesion guardada: UsuarioId={result.Usuario_ID}, UsuarioNombre={result.Usuario}");
 
 
-            // Redirigir directamente a Cancion/Index
+            
             return RedirectToAction("Index", "Cancion");
         }
 
@@ -126,11 +126,9 @@ namespace Proyecto_Musica_GH.Controllers
                 return View();
             }
 
-            // 👉 Esto fue lo que se agregó: guardar usuario en sesión
             HttpContext.Session.SetInt32("UsuarioId", result.Usuario_ID);
             HttpContext.Session.SetString("UsuarioNombre", result.Usuario);
 
-            // Redirigir directamente a Cancion/Index
             return RedirectToAction("Index", "Cancion");
         }
     }
